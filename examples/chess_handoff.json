@@ -1,0 +1,170 @@
+{
+  "handoff_version": "1.0.0",
+  "handoff_id": "HND-CHESS-GAME-001",
+  "source_run_id": "phase1-chess-run-001",
+  "prd_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+  "selected_architecture": "Modular Monolith (Layered)",
+  "architecture_selection_reasoning": "Selected Modular Monolith to satisfy move latency NFR-001 and game consistency for ST-001 and ST-002.",
+  "target_platform": "kubernetes_k3s",
+  "domain_glossary": [
+    {
+      "term": "Game Identifier",
+      "canonical_snake": "game_id",
+      "definition": "Unique identifier for an active multiplayer or AI chess match.",
+      "classification": "confidential"
+    },
+    {
+      "term": "Move Notation",
+      "canonical_snake": "move_uci",
+      "definition": "Standard UCI string notation denoting origin and destination board coordinates.",
+      "classification": "internal"
+    }
+  ],
+  "business_invariants": [
+    {
+      "id": "INV-001",
+      "statement": "Every chess game session must have a non-empty game_id and positive turn quantity.",
+      "applies_to_stories": [
+        "ST-001",
+        "ST-002"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "story_id": "ST-001",
+      "epic_id": "EP-001",
+      "title": "Initialize Multiplayer Chess Game",
+      "task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ],
+      "criteria": [
+        {
+          "id": "AC-001-01",
+          "gherkin": "Given a valid game_id and positive quantity When the game endpoint is called Then the game session is persisted with status PROCESSED"
+        },
+        {
+          "id": "AC-001-02",
+          "gherkin": "Given a zero or negative quantity When the game endpoint is called Then a 422 DomainError is raised"
+        }
+      ],
+      "source_anchor": "PRD-Chess-Section-1.1"
+    },
+    {
+      "story_id": "ST-002",
+      "epic_id": "EP-001",
+      "title": "Validate and Execute Chess Move",
+      "task_ids": [
+        "TSK-003"
+      ],
+      "criteria": [
+        {
+          "id": "AC-002-01",
+          "gherkin": "Given an active game_id and legal move When the move endpoint is called Then the engine updates board state with status PROCESSED"
+        }
+      ],
+      "source_anchor": "PRD-Chess-Section-1.2"
+    }
+  ],
+  "nfrs": [
+    {
+      "id": "NFR-001",
+      "statement": "P95 move evaluation latency must be under 50ms",
+      "metric": "p95_latency_ms",
+      "comparator": "<=",
+      "threshold": 50.0,
+      "unit": "ms",
+      "assumption": false
+    }
+  ],
+  "components": [
+    {
+      "id": "SVC-001",
+      "name": "chess-game-service",
+      "tier": "Application Backend Service",
+      "responsibilities": [
+        "Manage chess match sessions, timer state, and player turns"
+      ],
+      "technology_stack": "Python 3.12 / FastAPI / PostgreSQL",
+      "storage_type": "PostgreSQL",
+      "linked_task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ],
+      "satisfies_nfrs": [
+        "NFR-001"
+      ],
+      "adr_ids": [
+        "ADR-001"
+      ],
+      "architectural_reasoning": "Coordinates multiplayer chess matches and turns satisfying NFR-001."
+    },
+    {
+      "id": "SVC-002",
+      "name": "chess-engine-service",
+      "tier": "Application Backend Service",
+      "responsibilities": [
+        "Validate legal piece moves, detect check and checkmate, and update board state"
+      ],
+      "technology_stack": "Python 3.12 / FastAPI / PostgreSQL",
+      "storage_type": "PostgreSQL",
+      "linked_task_ids": [
+        "TSK-003"
+      ],
+      "satisfies_nfrs": [
+        "NFR-001"
+      ],
+      "adr_ids": [
+        "ADR-001"
+      ],
+      "architectural_reasoning": "Executes deterministic chess board rules and state transitions."
+    }
+  ],
+  "dependencies": [
+    {
+      "source": "SVC-001",
+      "target_component": "SVC-002",
+      "kind": "runtime"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "SVC-001",
+      "target": "SVC-002",
+      "interaction": "calls",
+      "protocol": "http",
+      "sync": true,
+      "contract_ref": "CON-001"
+    }
+  ],
+  "traceability": [
+    {
+      "from_id": "SVC-001",
+      "to_id": "TSK-001",
+      "relation": "implements"
+    },
+    {
+      "from_id": "SVC-001",
+      "to_id": "TSK-002",
+      "relation": "implements"
+    },
+    {
+      "from_id": "SVC-002",
+      "to_id": "TSK-003",
+      "relation": "implements"
+    }
+  ],
+  "adrs": [
+    {
+      "id": "ADR-001",
+      "level": 1,
+      "title": "Hexagonal Chess Engine Monolith",
+      "decision": "Enforce domain <- api boundary with separate engine and game services.",
+      "status": "accepted"
+    }
+  ],
+  "shared_infrastructure": [
+    "postgresql-chess"
+  ]
+}

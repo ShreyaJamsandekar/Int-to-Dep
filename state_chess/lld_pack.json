@@ -1,0 +1,505 @@
+{
+  "api_contracts": [
+    {
+      "auth_scopes": [
+        "SEC-001"
+      ],
+      "id": "CON-001",
+      "kind": "openapi",
+      "path": "contracts/con-001.yaml",
+      "sha256": "bf383dc9de2d31515f66e4c3eaec2cf7b53f6bb3f95c0decdfe76ea77fb98fe2"
+    }
+  ],
+  "ddl_files": [
+    "migrations/001_chess_game_service_records.sql",
+    "migrations/002_chess_engine_service_records.sql"
+  ],
+  "handoff_hash": "0aad42636049cbad9e0c5bf0362824bb3fbb8913969c7d84c3848e6cdd6afdd6",
+  "lld_version": "1.0.0",
+  "modules": [
+    {
+      "ac_ids": [
+        "AC-001-01",
+        "AC-001-02"
+      ],
+      "component_id": "SVC-001",
+      "config_keys": [
+        "CFG-001"
+      ],
+      "data_models": [
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "game_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            }
+          ],
+          "id": "DTO-001",
+          "module_id": "MOD-001",
+          "name": "ChessGameServiceRequest",
+          "validators": []
+        },
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "game_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "str"
+            }
+          ],
+          "id": "DTO-002",
+          "module_id": "MOD-001",
+          "name": "ChessGameServiceResponse",
+          "validators": []
+        }
+      ],
+      "depends_on": [],
+      "errors": [
+        {
+          "exception_name": "ChessGameServiceDomainError",
+          "http_status": 422,
+          "id": "ERR-001",
+          "module_id": "MOD-001",
+          "problem_type_uri": "https://errors.enterprise.internal/chess_game_service/domain-error"
+        }
+      ],
+      "id": "MOD-001",
+      "layer": "domain",
+      "path": "services/chess_game_service/domain_service.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-001-01",
+            "AC-001-02"
+          ],
+          "input_dtos": [
+            "DTO-001"
+          ],
+          "max_cyclomatic": 10,
+          "name": "process_chess_game_service",
+          "output_dto": "DTO-002",
+          "postconditions": [
+            "result.status == 'PROCESSED'"
+          ],
+          "preconditions": [
+            "payload.quantity > 0"
+          ],
+          "purpose": "Validate business invariants and execute domain logic for chess-game-service.",
+          "raises": [
+            "ERR-001"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 1,
+            "timeout_ms": 2000
+          },
+          "signature": "def process_chess_game_service(payload: ChessGameServiceRequest) -> ChessGameServiceResponse",
+          "telemetry": {
+            "metrics_emitted": [
+              "chess_game_service_processed_total"
+            ],
+            "span_name": "chess_game_service.process",
+            "structured_log_events": [
+              "chess_game_service_processed"
+            ]
+          },
+          "transaction_boundary": "required"
+        }
+      ],
+      "responsibilities": [
+        "Core domain logic and persistence for chess-game-service"
+      ],
+      "tables": [
+        {
+          "columns": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "confidential",
+              "constraints": null,
+              "name": "game_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "INTEGER"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "TEXT"
+            }
+          ],
+          "foreign_keys": [],
+          "id": "TBL-001",
+          "indexes": [
+            [
+              "game_id"
+            ]
+          ],
+          "module_id": "MOD-001",
+          "owner_component_id": "SVC-001",
+          "primary_key": [
+            "record_id"
+          ],
+          "table_name": "chess_game_service_records"
+        }
+      ],
+      "tags": [
+        "core_logic",
+        "persistence"
+      ],
+      "task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-001-01",
+        "AC-001-02"
+      ],
+      "component_id": "SVC-001",
+      "config_keys": [],
+      "data_models": [],
+      "depends_on": [
+        "MOD-001"
+      ],
+      "errors": [],
+      "id": "MOD-002",
+      "layer": "api",
+      "path": "services/chess_game_service/api_routes.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-001-01",
+            "AC-001-02"
+          ],
+          "input_dtos": [
+            "DTO-001"
+          ],
+          "max_cyclomatic": 8,
+          "name": "handle_chess_game_service_endpoint",
+          "output_dto": "DTO-002",
+          "postconditions": [],
+          "preconditions": [],
+          "purpose": "Expose HTTP endpoint for chess-game-service and delegate to MOD-001.",
+          "raises": [
+            "ERR-001"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 0,
+            "timeout_ms": 3000
+          },
+          "signature": "def handle_chess_game_service_endpoint(payload: dict) -> dict",
+          "telemetry": {
+            "metrics_emitted": [],
+            "span_name": "http.post.chess_game_service",
+            "structured_log_events": []
+          },
+          "transaction_boundary": "none"
+        }
+      ],
+      "responsibilities": [
+        "HTTP endpoint router and RFC 7807 error mapping for chess-game-service"
+      ],
+      "tables": [],
+      "tags": [
+        "api",
+        "io"
+      ],
+      "task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-002-01"
+      ],
+      "component_id": "SVC-002",
+      "config_keys": [
+        "CFG-002"
+      ],
+      "data_models": [
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "game_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            }
+          ],
+          "id": "DTO-003",
+          "module_id": "MOD-003",
+          "name": "ChessEngineServiceRequest",
+          "validators": []
+        },
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "game_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "str"
+            }
+          ],
+          "id": "DTO-004",
+          "module_id": "MOD-003",
+          "name": "ChessEngineServiceResponse",
+          "validators": []
+        }
+      ],
+      "depends_on": [],
+      "errors": [
+        {
+          "exception_name": "ChessEngineServiceDomainError",
+          "http_status": 422,
+          "id": "ERR-002",
+          "module_id": "MOD-003",
+          "problem_type_uri": "https://errors.enterprise.internal/chess_engine_service/domain-error"
+        }
+      ],
+      "id": "MOD-003",
+      "layer": "domain",
+      "path": "services/chess_engine_service/domain_service.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-002-01"
+          ],
+          "input_dtos": [
+            "DTO-003"
+          ],
+          "max_cyclomatic": 10,
+          "name": "process_chess_engine_service",
+          "output_dto": "DTO-004",
+          "postconditions": [
+            "result.status == 'PROCESSED'"
+          ],
+          "preconditions": [
+            "payload.quantity > 0"
+          ],
+          "purpose": "Validate business invariants and execute domain logic for chess-engine-service.",
+          "raises": [
+            "ERR-002"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 1,
+            "timeout_ms": 2000
+          },
+          "signature": "def process_chess_engine_service(payload: ChessEngineServiceRequest) -> ChessEngineServiceResponse",
+          "telemetry": {
+            "metrics_emitted": [
+              "chess_engine_service_processed_total"
+            ],
+            "span_name": "chess_engine_service.process",
+            "structured_log_events": [
+              "chess_engine_service_processed"
+            ]
+          },
+          "transaction_boundary": "required"
+        }
+      ],
+      "responsibilities": [
+        "Core domain logic and persistence for chess-engine-service"
+      ],
+      "tables": [
+        {
+          "columns": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "confidential",
+              "constraints": null,
+              "name": "game_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "INTEGER"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "TEXT"
+            }
+          ],
+          "foreign_keys": [],
+          "id": "TBL-002",
+          "indexes": [
+            [
+              "game_id"
+            ]
+          ],
+          "module_id": "MOD-003",
+          "owner_component_id": "SVC-002",
+          "primary_key": [
+            "record_id"
+          ],
+          "table_name": "chess_engine_service_records"
+        }
+      ],
+      "tags": [
+        "core_logic",
+        "persistence"
+      ],
+      "task_ids": [
+        "TSK-003"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-002-01"
+      ],
+      "component_id": "SVC-002",
+      "config_keys": [],
+      "data_models": [],
+      "depends_on": [
+        "MOD-003"
+      ],
+      "errors": [],
+      "id": "MOD-004",
+      "layer": "api",
+      "path": "services/chess_engine_service/api_routes.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-002-01"
+          ],
+          "input_dtos": [
+            "DTO-003"
+          ],
+          "max_cyclomatic": 8,
+          "name": "handle_chess_engine_service_endpoint",
+          "output_dto": "DTO-004",
+          "postconditions": [],
+          "preconditions": [],
+          "purpose": "Expose HTTP endpoint for chess-engine-service and delegate to MOD-003.",
+          "raises": [
+            "ERR-002"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 0,
+            "timeout_ms": 3000
+          },
+          "signature": "def handle_chess_engine_service_endpoint(payload: dict) -> dict",
+          "telemetry": {
+            "metrics_emitted": [],
+            "span_name": "http.post.chess_engine_service",
+            "structured_log_events": []
+          },
+          "transaction_boundary": "none"
+        }
+      ],
+      "responsibilities": [
+        "HTTP endpoint router and RFC 7807 error mapping for chess-engine-service"
+      ],
+      "tables": [],
+      "tags": [
+        "api",
+        "io"
+      ],
+      "task_ids": [
+        "TSK-003"
+      ]
+    }
+  ]
+}

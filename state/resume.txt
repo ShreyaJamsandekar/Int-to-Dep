@@ -1,0 +1,26 @@
+PIPELINE RESUME FILE (SIMPLE PLAIN TEXT)
+========================================
+You can read or edit this file directly in Antigravity or any text editor.
+To approve the LLD and let the pipeline build and deploy the code, change
+'LLD Approved: PENDING' to 'LLD Approved: YES' and run the Next Command below.
+
+Run ID: run-2026-10-22-001
+Handoff File: examples/sample_handoff.json
+Workspace Directory: workspace_build
+Current Stage: G2_RELEASE_READY
+LLD Approved: YES
+Graph Epoch: 8
+Completed Stages: H0_INTAKE, L1_LLD, L2_SCAFFOLD, L2_ORACLE, L3_BUILD, L4_VERIFY_TASK, L5_REVIEW_LOOP, L4_VERIFY_TRUNK, L6_CONFORMANCE, L7_DEPLOY
+Completed Waves: 0, 1
+Completed Build Tasks: BLD-001, BLD-003, BLD-002, BLD-004
+Pending Build Tasks: None
+LLD Replan Loops Run: 0
+Task Splits Run: 0
+Last Status: COMPLETED
+Updated At: 2026-10-22T22:49:28.915193+00:00
+Notes: Deployable code & ReleaseBundle ready in workspace_build/release_bundle/release-bundle.json
+
+HOW TO RESUME OR APPROVE:
+Next Command: python -m pipeline.cli status --state-dir state
+Approve LLD Command: python -m pipeline.cli approve-lld --state-dir state
+Resume Run Command:  python -m pipeline.cli resume --state-dir state

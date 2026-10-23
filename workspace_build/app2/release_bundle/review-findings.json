@@ -1,0 +1,82 @@
+[
+  {
+    "finding": {
+      "id": "FND-001",
+      "dimension": "correctness",
+      "severity": "major",
+      "rule": "BOUNDARY_VALIDATION",
+      "file": "services/chess_game_service/domain_service.py",
+      "line": 1,
+      "symbol_name": "process_chess_game_service",
+      "quote": "\"\"\"Enterprise implementation f",
+      "impact": "Edge-case whitespace input requires explicit normalization before persistence.",
+      "refs": [
+        "AC-001-01",
+        "MOD-001"
+      ],
+      "repro_artifact": null,
+      "source": "reviewer"
+    },
+    "status": "verified"
+  },
+  {
+    "finding": {
+      "id": "FND-001",
+      "dimension": "correctness",
+      "severity": "major",
+      "rule": "BOUNDARY_VALIDATION",
+      "file": "services/chess_engine_service/domain_service.py",
+      "line": 1,
+      "symbol_name": "process_chess_engine_service",
+      "quote": "\"\"\"Enterprise implementation f",
+      "impact": "Edge-case whitespace input requires explicit normalization before persistence.",
+      "refs": [
+        "AC-002-01",
+        "MOD-003"
+      ],
+      "repro_artifact": null,
+      "source": "reviewer"
+    },
+    "status": "verified"
+  },
+  {
+    "finding": {
+      "id": "FND-001",
+      "dimension": "correctness",
+      "severity": "major",
+      "rule": "BOUNDARY_VALIDATION",
+      "file": "services/chess_game_service/api_routes.py",
+      "line": 1,
+      "symbol_name": "handle_chess_game_service_endpoint",
+      "quote": "\"\"\"Enterprise implementation f",
+      "impact": "Edge-case whitespace input requires explicit normalization before persistence.",
+      "refs": [
+        "AC-001-01",
+        "MOD-002"
+      ],
+      "repro_artifact": null,
+      "source": "reviewer"
+    },
+    "status": "verified"
+  },
+  {
+    "finding": {
+      "id": "FND-001",
+      "dimension": "correctness",
+      "severity": "major",
+      "rule": "BOUNDARY_VALIDATION",
+      "file": "services/chess_engine_service/api_routes.py",
+      "line": 1,
+      "symbol_name": "handle_chess_engine_service_endpoint",
+      "quote": "\"\"\"Enterprise implementation f",
+      "impact": "Edge-case whitespace input requires explicit normalization before persistence.",
+      "refs": [
+        "AC-002-01",
+        "MOD-004"
+      ],
+      "repro_artifact": null,
+      "source": "reviewer"
+    },
+    "status": "verified"
+  }
+]

@@ -1,0 +1,505 @@
+{
+  "api_contracts": [
+    {
+      "auth_scopes": [
+        "SEC-001"
+      ],
+      "id": "CON-001",
+      "kind": "openapi",
+      "path": "contracts/con-001.yaml",
+      "sha256": "c3c18b5ba304d0247d52497a8ece48995fceb88c7d9ea0d3bc3142db0a90baad"
+    }
+  ],
+  "ddl_files": [
+    "migrations/001_order_service_records.sql",
+    "migrations/002_inventory_service_records.sql"
+  ],
+  "handoff_hash": "cf0c064e411fd7cfc1b0f042af915d75b5d4a01c83ad779669fc19c58456f117",
+  "lld_version": "1.0.0",
+  "modules": [
+    {
+      "ac_ids": [
+        "AC-001-01",
+        "AC-001-02"
+      ],
+      "component_id": "SVC-001",
+      "config_keys": [
+        "CFG-001"
+      ],
+      "data_models": [
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "order_sku",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            }
+          ],
+          "id": "DTO-001",
+          "module_id": "MOD-001",
+          "name": "OrderServiceRequest",
+          "validators": []
+        },
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "order_sku",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "str"
+            }
+          ],
+          "id": "DTO-002",
+          "module_id": "MOD-001",
+          "name": "OrderServiceResponse",
+          "validators": []
+        }
+      ],
+      "depends_on": [],
+      "errors": [
+        {
+          "exception_name": "OrderServiceDomainError",
+          "http_status": 422,
+          "id": "ERR-001",
+          "module_id": "MOD-001",
+          "problem_type_uri": "https://errors.enterprise.internal/order_service/domain-error"
+        }
+      ],
+      "id": "MOD-001",
+      "layer": "domain",
+      "path": "services/order_service/domain_service.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-001-01",
+            "AC-001-02"
+          ],
+          "input_dtos": [
+            "DTO-001"
+          ],
+          "max_cyclomatic": 10,
+          "name": "process_order_service",
+          "output_dto": "DTO-002",
+          "postconditions": [
+            "result.status == 'PROCESSED'"
+          ],
+          "preconditions": [
+            "payload.quantity > 0"
+          ],
+          "purpose": "Validate business invariants and execute domain logic for order-service.",
+          "raises": [
+            "ERR-001"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 1,
+            "timeout_ms": 2000
+          },
+          "signature": "def process_order_service(payload: OrderServiceRequest) -> OrderServiceResponse",
+          "telemetry": {
+            "metrics_emitted": [
+              "order_service_processed_total"
+            ],
+            "span_name": "order_service.process",
+            "structured_log_events": [
+              "order_service_processed"
+            ]
+          },
+          "transaction_boundary": "required"
+        }
+      ],
+      "responsibilities": [
+        "Core domain logic and persistence for order-service"
+      ],
+      "tables": [
+        {
+          "columns": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "confidential",
+              "constraints": null,
+              "name": "order_sku",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "INTEGER"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "TEXT"
+            }
+          ],
+          "foreign_keys": [],
+          "id": "TBL-001",
+          "indexes": [
+            [
+              "order_sku"
+            ]
+          ],
+          "module_id": "MOD-001",
+          "owner_component_id": "SVC-001",
+          "primary_key": [
+            "record_id"
+          ],
+          "table_name": "order_service_records"
+        }
+      ],
+      "tags": [
+        "core_logic",
+        "persistence"
+      ],
+      "task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-001-01",
+        "AC-001-02"
+      ],
+      "component_id": "SVC-001",
+      "config_keys": [],
+      "data_models": [],
+      "depends_on": [
+        "MOD-001"
+      ],
+      "errors": [],
+      "id": "MOD-002",
+      "layer": "api",
+      "path": "services/order_service/api_routes.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-001-01",
+            "AC-001-02"
+          ],
+          "input_dtos": [
+            "DTO-001"
+          ],
+          "max_cyclomatic": 8,
+          "name": "handle_order_service_endpoint",
+          "output_dto": "DTO-002",
+          "postconditions": [],
+          "preconditions": [],
+          "purpose": "Expose HTTP endpoint for order-service and delegate to MOD-001.",
+          "raises": [
+            "ERR-001"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 0,
+            "timeout_ms": 3000
+          },
+          "signature": "def handle_order_service_endpoint(payload: dict) -> dict",
+          "telemetry": {
+            "metrics_emitted": [],
+            "span_name": "http.post.order_service",
+            "structured_log_events": []
+          },
+          "transaction_boundary": "none"
+        }
+      ],
+      "responsibilities": [
+        "HTTP endpoint router and RFC 7807 error mapping for order-service"
+      ],
+      "tables": [],
+      "tags": [
+        "api",
+        "io"
+      ],
+      "task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-002-01"
+      ],
+      "component_id": "SVC-002",
+      "config_keys": [
+        "CFG-002"
+      ],
+      "data_models": [
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "order_sku",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            }
+          ],
+          "id": "DTO-003",
+          "module_id": "MOD-003",
+          "name": "InventoryServiceRequest",
+          "validators": []
+        },
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "order_sku",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "str"
+            }
+          ],
+          "id": "DTO-004",
+          "module_id": "MOD-003",
+          "name": "InventoryServiceResponse",
+          "validators": []
+        }
+      ],
+      "depends_on": [],
+      "errors": [
+        {
+          "exception_name": "InventoryServiceDomainError",
+          "http_status": 422,
+          "id": "ERR-002",
+          "module_id": "MOD-003",
+          "problem_type_uri": "https://errors.enterprise.internal/inventory_service/domain-error"
+        }
+      ],
+      "id": "MOD-003",
+      "layer": "domain",
+      "path": "services/inventory_service/domain_service.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-002-01"
+          ],
+          "input_dtos": [
+            "DTO-003"
+          ],
+          "max_cyclomatic": 10,
+          "name": "process_inventory_service",
+          "output_dto": "DTO-004",
+          "postconditions": [
+            "result.status == 'PROCESSED'"
+          ],
+          "preconditions": [
+            "payload.quantity > 0"
+          ],
+          "purpose": "Validate business invariants and execute domain logic for inventory-service.",
+          "raises": [
+            "ERR-002"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 1,
+            "timeout_ms": 2000
+          },
+          "signature": "def process_inventory_service(payload: InventoryServiceRequest) -> InventoryServiceResponse",
+          "telemetry": {
+            "metrics_emitted": [
+              "inventory_service_processed_total"
+            ],
+            "span_name": "inventory_service.process",
+            "structured_log_events": [
+              "inventory_service_processed"
+            ]
+          },
+          "transaction_boundary": "required"
+        }
+      ],
+      "responsibilities": [
+        "Core domain logic and persistence for inventory-service"
+      ],
+      "tables": [
+        {
+          "columns": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "confidential",
+              "constraints": null,
+              "name": "order_sku",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "INTEGER"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "TEXT"
+            }
+          ],
+          "foreign_keys": [],
+          "id": "TBL-002",
+          "indexes": [
+            [
+              "order_sku"
+            ]
+          ],
+          "module_id": "MOD-003",
+          "owner_component_id": "SVC-002",
+          "primary_key": [
+            "record_id"
+          ],
+          "table_name": "inventory_service_records"
+        }
+      ],
+      "tags": [
+        "core_logic",
+        "persistence"
+      ],
+      "task_ids": [
+        "TSK-003"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-002-01"
+      ],
+      "component_id": "SVC-002",
+      "config_keys": [],
+      "data_models": [],
+      "depends_on": [
+        "MOD-003"
+      ],
+      "errors": [],
+      "id": "MOD-004",
+      "layer": "api",
+      "path": "services/inventory_service/api_routes.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-002-01"
+          ],
+          "input_dtos": [
+            "DTO-003"
+          ],
+          "max_cyclomatic": 8,
+          "name": "handle_inventory_service_endpoint",
+          "output_dto": "DTO-004",
+          "postconditions": [],
+          "preconditions": [],
+          "purpose": "Expose HTTP endpoint for inventory-service and delegate to MOD-003.",
+          "raises": [
+            "ERR-002"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 0,
+            "timeout_ms": 3000
+          },
+          "signature": "def handle_inventory_service_endpoint(payload: dict) -> dict",
+          "telemetry": {
+            "metrics_emitted": [],
+            "span_name": "http.post.inventory_service",
+            "structured_log_events": []
+          },
+          "transaction_boundary": "none"
+        }
+      ],
+      "responsibilities": [
+        "HTTP endpoint router and RFC 7807 error mapping for inventory-service"
+      ],
+      "tables": [],
+      "tags": [
+        "api",
+        "io"
+      ],
+      "task_ids": [
+        "TSK-003"
+      ]
+    }
+  ]
+}

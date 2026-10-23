@@ -1,0 +1,26 @@
+{
+  "epoch": 8,
+  "node_counts": {
+    "AC": 3,
+    "ADR": 1,
+    "BuildTask": 4,
+    "BusinessInvariant": 1,
+    "CodeSymbol": 10,
+    "Component": 2,
+    "Contract": 1,
+    "DataModelSpec": 4,
+    "DomainTerm": 1,
+    "ErrorSpec": 2,
+    "Finding": 1,
+    "FunctionSpec": 4,
+    "Module": 4,
+    "NFR": 1,
+    "RiskPattern": 1,
+    "Story": 2,
+    "TableSpec": 2,
+    "Task": 3,
+    "Test": 3
+  },
+  "edge_count": 85,
+  "stale_nodes": []
+}

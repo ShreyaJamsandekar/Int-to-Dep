@@ -1,0 +1,6 @@
+targetPlatform: kubernetes_k3s
+replicaCount: 2
+podDisruptionBudget:
+  minAvailable: 1
+networkPolicy:
+  enabled: true

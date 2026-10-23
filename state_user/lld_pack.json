@@ -1,0 +1,511 @@
+{
+  "api_contracts": [
+    {
+      "auth_scopes": [
+        "SEC-001"
+      ],
+      "id": "CON-001",
+      "kind": "openapi",
+      "path": "contracts/con-001.yaml",
+      "sha256": "35202f00d2fb879833543f747fd9f6da5301a720504cb3a3d49c6a29fda1f60c"
+    }
+  ],
+  "ddl_files": [
+    "migrations/001_user_registration_service_records.sql",
+    "migrations/002_auth_credential_service_records.sql"
+  ],
+  "handoff_hash": "60a160495ccbf8dc3bc798294edd8b6365f1f311482cd83fda80db93afd3c7eb",
+  "lld_version": "1.0.0",
+  "modules": [
+    {
+      "ac_ids": [
+        "AC-001-01",
+        "AC-001-02"
+      ],
+      "component_id": "SVC-001",
+      "config_keys": [
+        "CFG-001"
+      ],
+      "data_models": [
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "user_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            }
+          ],
+          "id": "DTO-001",
+          "module_id": "MOD-001",
+          "name": "UserRegistrationServiceRequest",
+          "validators": []
+        },
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "user_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "str"
+            }
+          ],
+          "id": "DTO-002",
+          "module_id": "MOD-001",
+          "name": "UserRegistrationServiceResponse",
+          "validators": []
+        }
+      ],
+      "depends_on": [],
+      "errors": [
+        {
+          "exception_name": "UserRegistrationServiceDomainError",
+          "http_status": 422,
+          "id": "ERR-001",
+          "module_id": "MOD-001",
+          "problem_type_uri": "https://errors.enterprise.internal/user_registration_service/domain-error"
+        }
+      ],
+      "id": "MOD-001",
+      "layer": "domain",
+      "path": "services/user_registration_service/domain_service.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-001-01",
+            "AC-001-02"
+          ],
+          "input_dtos": [
+            "DTO-001"
+          ],
+          "max_cyclomatic": 10,
+          "name": "process_user_registration_service",
+          "output_dto": "DTO-002",
+          "postconditions": [
+            "result.status == 'PROCESSED'"
+          ],
+          "preconditions": [
+            "payload.quantity > 0"
+          ],
+          "purpose": "Validate business invariants and execute domain logic for user-registration-service.",
+          "raises": [
+            "ERR-001"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 1,
+            "timeout_ms": 2000
+          },
+          "signature": "def process_user_registration_service(payload: UserRegistrationServiceRequest) -> UserRegistrationServiceResponse",
+          "telemetry": {
+            "metrics_emitted": [
+              "user_registration_service_processed_total"
+            ],
+            "span_name": "user_registration_service.process",
+            "structured_log_events": [
+              "user_registration_service_processed"
+            ]
+          },
+          "transaction_boundary": "required"
+        }
+      ],
+      "responsibilities": [
+        "Core domain logic and persistence for user-registration-service"
+      ],
+      "tables": [
+        {
+          "columns": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "confidential",
+              "constraints": null,
+              "name": "user_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "INTEGER"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "TEXT"
+            }
+          ],
+          "foreign_keys": [],
+          "id": "TBL-001",
+          "indexes": [
+            [
+              "user_id"
+            ]
+          ],
+          "module_id": "MOD-001",
+          "owner_component_id": "SVC-001",
+          "primary_key": [
+            "record_id"
+          ],
+          "table_name": "user_registration_service_records"
+        }
+      ],
+      "tags": [
+        "core_logic",
+        "persistence"
+      ],
+      "task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-001-01",
+        "AC-001-02"
+      ],
+      "component_id": "SVC-001",
+      "config_keys": [],
+      "data_models": [],
+      "depends_on": [
+        "MOD-001"
+      ],
+      "errors": [],
+      "id": "MOD-002",
+      "layer": "api",
+      "path": "services/user_registration_service/api_routes.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-001-01",
+            "AC-001-02"
+          ],
+          "input_dtos": [
+            "DTO-001"
+          ],
+          "max_cyclomatic": 8,
+          "name": "handle_user_registration_service_endpoint",
+          "output_dto": "DTO-002",
+          "postconditions": [],
+          "preconditions": [],
+          "purpose": "Expose HTTP endpoint for user-registration-service and delegate to MOD-001.",
+          "raises": [
+            "ERR-001"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 0,
+            "timeout_ms": 3000
+          },
+          "signature": "def handle_user_registration_service_endpoint(payload: dict) -> dict",
+          "telemetry": {
+            "metrics_emitted": [],
+            "span_name": "http.post.user_registration_service",
+            "structured_log_events": []
+          },
+          "transaction_boundary": "none"
+        }
+      ],
+      "responsibilities": [
+        "HTTP endpoint router and RFC 7807 error mapping for user-registration-service"
+      ],
+      "tables": [],
+      "tags": [
+        "api",
+        "io"
+      ],
+      "task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-002-01",
+        "AC-003-01"
+      ],
+      "component_id": "SVC-002",
+      "config_keys": [
+        "CFG-002"
+      ],
+      "data_models": [
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "user_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            }
+          ],
+          "id": "DTO-003",
+          "module_id": "MOD-003",
+          "name": "AuthCredentialServiceRequest",
+          "validators": []
+        },
+        {
+          "fields": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "user_id",
+              "required": true,
+              "type_annotation": "str"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "int"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "str"
+            }
+          ],
+          "id": "DTO-004",
+          "module_id": "MOD-003",
+          "name": "AuthCredentialServiceResponse",
+          "validators": []
+        }
+      ],
+      "depends_on": [],
+      "errors": [
+        {
+          "exception_name": "AuthCredentialServiceDomainError",
+          "http_status": 422,
+          "id": "ERR-002",
+          "module_id": "MOD-003",
+          "problem_type_uri": "https://errors.enterprise.internal/auth_credential_service/domain-error"
+        }
+      ],
+      "id": "MOD-003",
+      "layer": "domain",
+      "path": "services/auth_credential_service/domain_service.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-002-01",
+            "AC-003-01"
+          ],
+          "input_dtos": [
+            "DTO-003"
+          ],
+          "max_cyclomatic": 10,
+          "name": "process_auth_credential_service",
+          "output_dto": "DTO-004",
+          "postconditions": [
+            "result.status == 'PROCESSED'"
+          ],
+          "preconditions": [
+            "payload.quantity > 0"
+          ],
+          "purpose": "Validate business invariants and execute domain logic for auth-credential-service.",
+          "raises": [
+            "ERR-002"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 1,
+            "timeout_ms": 2000
+          },
+          "signature": "def process_auth_credential_service(payload: AuthCredentialServiceRequest) -> AuthCredentialServiceResponse",
+          "telemetry": {
+            "metrics_emitted": [
+              "auth_credential_service_processed_total"
+            ],
+            "span_name": "auth_credential_service.process",
+            "structured_log_events": [
+              "auth_credential_service_processed"
+            ]
+          },
+          "transaction_boundary": "required"
+        }
+      ],
+      "responsibilities": [
+        "Core domain logic and persistence for auth-credential-service"
+      ],
+      "tables": [
+        {
+          "columns": [
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "record_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "confidential",
+              "constraints": null,
+              "name": "user_id",
+              "required": true,
+              "type_annotation": "TEXT"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "quantity",
+              "required": true,
+              "type_annotation": "INTEGER"
+            },
+            {
+              "classification": "internal",
+              "constraints": null,
+              "name": "status",
+              "required": true,
+              "type_annotation": "TEXT"
+            }
+          ],
+          "foreign_keys": [],
+          "id": "TBL-002",
+          "indexes": [
+            [
+              "user_id"
+            ]
+          ],
+          "module_id": "MOD-003",
+          "owner_component_id": "SVC-002",
+          "primary_key": [
+            "record_id"
+          ],
+          "table_name": "auth_credential_service_records"
+        }
+      ],
+      "tags": [
+        "core_logic",
+        "persistence"
+      ],
+      "task_ids": [
+        "TSK-003",
+        "TSK-004"
+      ]
+    },
+    {
+      "ac_ids": [
+        "AC-002-01",
+        "AC-003-01"
+      ],
+      "component_id": "SVC-002",
+      "config_keys": [],
+      "data_models": [],
+      "depends_on": [
+        "MOD-003"
+      ],
+      "errors": [],
+      "id": "MOD-004",
+      "layer": "api",
+      "path": "services/auth_credential_service/api_routes.py",
+      "public_interface": [
+        {
+          "ac_ids": [
+            "AC-002-01",
+            "AC-003-01"
+          ],
+          "input_dtos": [
+            "DTO-003"
+          ],
+          "max_cyclomatic": 8,
+          "name": "handle_auth_credential_service_endpoint",
+          "output_dto": "DTO-004",
+          "postconditions": [],
+          "preconditions": [],
+          "purpose": "Expose HTTP endpoint for auth-credential-service and delegate to MOD-003.",
+          "raises": [
+            "ERR-002"
+          ],
+          "resilience": {
+            "backoff_base_ms": 200,
+            "circuit_breaker_threshold": null,
+            "idempotency_required": true,
+            "max_retries": 0,
+            "timeout_ms": 3000
+          },
+          "signature": "def handle_auth_credential_service_endpoint(payload: dict) -> dict",
+          "telemetry": {
+            "metrics_emitted": [],
+            "span_name": "http.post.auth_credential_service",
+            "structured_log_events": []
+          },
+          "transaction_boundary": "none"
+        }
+      ],
+      "responsibilities": [
+        "HTTP endpoint router and RFC 7807 error mapping for auth-credential-service"
+      ],
+      "tables": [],
+      "tags": [
+        "api",
+        "io"
+      ],
+      "task_ids": [
+        "TSK-003",
+        "TSK-004"
+      ]
+    }
+  ]
+}

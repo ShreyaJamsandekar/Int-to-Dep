@@ -1,0 +1,1127 @@
+{
+  "meta": [
+    {
+      "key": "epoch",
+      "value": "8"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ST-001",
+      "kind": "Story",
+      "content_hash": "40d63fcc0072df6dd17a76b195191ea337e0203ad246f46f472ba3da688ea590",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"criteria\": [{\"gherkin\": \"Given a valid game_id and positive quantity When the game endpoint is called Then the game session is persisted with status PROCESSED\", \"id\": \"AC-001-01\"}, {\"gherkin\": \"Given a zero or negative quantity When the game endpoint is called Then a 422 DomainError is raised\", \"id\": \"AC-001-02\"}], \"epic_id\": \"EP-001\", \"source_anchor\": \"PRD-Chess-Section-1.1\", \"story_id\": \"ST-001\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"title\": \"Initialize Multiplayer Chess Game\"}"
+    },
+    {
+      "id": "TSK-001",
+      "kind": "Task",
+      "content_hash": "46a54bd50a82164f761dd8e717de2ca68eec37139b4137990e3201c5520c104a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-001\", \"story_id\": \"ST-001\"}"
+    },
+    {
+      "id": "TSK-002",
+      "kind": "Task",
+      "content_hash": "23e23ffb4c7b9fbe2f2ed531f8620d898eaa8392842f0dfaa83b98c79e632bdd",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-002\", \"story_id\": \"ST-001\"}"
+    },
+    {
+      "id": "AC-001-01",
+      "kind": "AC",
+      "content_hash": "0a1a8e9b766272d7646d7cc2a0618d80477f46001e93cc355b6cd43d3de78770",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given a valid game_id and positive quantity When the game endpoint is called Then the game session is persisted with status PROCESSED\", \"id\": \"AC-001-01\"}"
+    },
+    {
+      "id": "AC-001-02",
+      "kind": "AC",
+      "content_hash": "d120adff594a06e0e9187e5223dee614be20ec9e6599412e1e95e7f18538b9a1",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given a zero or negative quantity When the game endpoint is called Then a 422 DomainError is raised\", \"id\": \"AC-001-02\"}"
+    },
+    {
+      "id": "ST-002",
+      "kind": "Story",
+      "content_hash": "593090f6c013a79c7e58f5eaa23422d72a5c502a6b8f4fb9f927ca1e220087d2",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"criteria\": [{\"gherkin\": \"Given an active game_id and legal move When the move endpoint is called Then the engine updates board state with status PROCESSED\", \"id\": \"AC-002-01\"}], \"epic_id\": \"EP-001\", \"source_anchor\": \"PRD-Chess-Section-1.2\", \"story_id\": \"ST-002\", \"task_ids\": [\"TSK-003\"], \"title\": \"Validate and Execute Chess Move\"}"
+    },
+    {
+      "id": "TSK-003",
+      "kind": "Task",
+      "content_hash": "f123abe9e1c3f6de62e4acb6b303d656b158398f2566964a67b21d987272adb1",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-003\", \"story_id\": \"ST-002\"}"
+    },
+    {
+      "id": "AC-002-01",
+      "kind": "AC",
+      "content_hash": "644338acd2b787c65abedbf5bb4dd6fd67473e770281842b0e011f94cfcd82e3",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given an active game_id and legal move When the move endpoint is called Then the engine updates board state with status PROCESSED\", \"id\": \"AC-002-01\"}"
+    },
+    {
+      "id": "NFR-001",
+      "kind": "NFR",
+      "content_hash": "57a8e956ea3e42351c238d03a5282f0556f9771680879fe80935bb3b995edef6",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"assumption\": false, \"comparator\": \"<=\", \"id\": \"NFR-001\", \"metric\": \"p95_latency_ms\", \"statement\": \"P95 move evaluation latency must be under 50ms\", \"threshold\": 50.0, \"unit\": \"ms\"}"
+    },
+    {
+      "id": "ADR-001",
+      "kind": "ADR",
+      "content_hash": "0508dab857248d7a6b17fbf191ce28ea2760fbdfee2a804f6c4a61cd5d993183",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"decision\": \"Enforce domain <- api boundary with separate engine and game services.\", \"id\": \"ADR-001\", \"level\": 1, \"status\": \"accepted\", \"title\": \"Hexagonal Chess Engine Monolith\"}"
+    },
+    {
+      "id": "TERM-game_id",
+      "kind": "DomainTerm",
+      "content_hash": "6df74cdd8f80dc9d942cccdfda9556c25f40b60c6a5f35786fa8747ec873aed7",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"canonical_snake\": \"game_id\", \"classification\": \"confidential\", \"definition\": \"Unique identifier for an active multiplayer or AI chess match.\", \"term\": \"Game Identifier\"}"
+    },
+    {
+      "id": "TERM-move_uci",
+      "kind": "DomainTerm",
+      "content_hash": "ec068f03aef6362f889828c6fe0fb093ab740b4fb5240b4131c3ec0c239bff9d",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"canonical_snake\": \"move_uci\", \"classification\": \"internal\", \"definition\": \"Standard UCI string notation denoting origin and destination board coordinates.\", \"term\": \"Move Notation\"}"
+    },
+    {
+      "id": "INV-001",
+      "kind": "BusinessInvariant",
+      "content_hash": "ccf9787d5bc1075520c93ef95c8da403c296d6f2019f9b15eb86b4a709f73aa4",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"applies_to_stories\": [\"ST-001\", \"ST-002\"], \"id\": \"INV-001\", \"statement\": \"Every chess game session must have a non-empty game_id and positive turn quantity.\"}"
+    },
+    {
+      "id": "SVC-001",
+      "kind": "Component",
+      "content_hash": "1eecd9dd91742773e51ae27bb1c96672b29d6da4fd58372676f7a3d673c5858b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"adr_ids\": [\"ADR-001\"], \"architectural_reasoning\": \"Coordinates multiplayer chess matches and turns satisfying NFR-001.\", \"id\": \"SVC-001\", \"linked_task_ids\": [\"TSK-001\", \"TSK-002\"], \"name\": \"chess-game-service\", \"responsibilities\": [\"Manage chess match sessions, timer state, and player turns\"], \"satisfies_nfrs\": [\"NFR-001\"], \"storage_type\": \"PostgreSQL\", \"technology_stack\": \"Python 3.12 / FastAPI / PostgreSQL\", \"tier\": \"Application Backend Service\"}"
+    },
+    {
+      "id": "SVC-002",
+      "kind": "Component",
+      "content_hash": "a45db217d044db2382f731f7a56bff787893d3027b9ca2b9a12ff038464647a2",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"adr_ids\": [\"ADR-001\"], \"architectural_reasoning\": \"Executes deterministic chess board rules and state transitions.\", \"id\": \"SVC-002\", \"linked_task_ids\": [\"TSK-003\"], \"name\": \"chess-engine-service\", \"responsibilities\": [\"Validate legal piece moves, detect check and checkmate, and update board state\"], \"satisfies_nfrs\": [\"NFR-001\"], \"storage_type\": \"PostgreSQL\", \"technology_stack\": \"Python 3.12 / FastAPI / PostgreSQL\", \"tier\": \"Application Backend Service\"}"
+    },
+    {
+      "id": "CON-001",
+      "kind": "Contract",
+      "content_hash": "0a912f5da2f6121a222c3f363bb40aa0d9c5e6359b0f5e12e15a5caf4ad3e8d9",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"auth_scopes\": [\"SEC-001\"], \"id\": \"CON-001\", \"kind\": \"openapi\", \"path\": \"contracts/con-001.yaml\", \"sha256\": \"bf383dc9de2d31515f66e4c3eaec2cf7b53f6bb3f95c0decdfe76ea77fb98fe2\"}"
+    },
+    {
+      "id": "MOD-001",
+      "kind": "Module",
+      "content_hash": "029424a782c3b738f7835962ae22d3692dfa5bc4d1bbf8b499a9963fb833a483",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"component_id\": \"SVC-001\", \"config_keys\": [\"CFG-001\"], \"data_models\": [{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-001\", \"module_id\": \"MOD-001\", \"name\": \"ChessGameServiceRequest\", \"validators\": []}, {\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-002\", \"module_id\": \"MOD-001\", \"name\": \"ChessGameServiceResponse\", \"validators\": []}], \"depends_on\": [], \"errors\": [{\"exception_name\": \"ChessGameServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-001\", \"module_id\": \"MOD-001\", \"problem_type_uri\": \"https://errors.enterprise.internal/chess_game_service/domain-error\"}], \"id\": \"MOD-001\", \"layer\": \"domain\", \"path\": \"services/chess_game_service/domain_service.py\", \"public_interface\": [{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 10, \"name\": \"process_chess_game_service\", \"output_dto\": \"DTO-002\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for chess-game-service.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_chess_game_service(payload: ChessGameServiceRequest) -> ChessGameServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"chess_game_service_processed_total\"], \"span_name\": \"chess_game_service.process\", \"structured_log_events\": [\"chess_game_service_processed\"]}, \"transaction_boundary\": \"required\"}], \"responsibilities\": [\"Core domain logic and persistence for chess-game-service\"], \"tables\": [{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-001\", \"indexes\": [[\"game_id\"]], \"module_id\": \"MOD-001\", \"owner_component_id\": \"SVC-001\", \"primary_key\": [\"record_id\"], \"table_name\": \"chess_game_service_records\"}], \"tags\": [\"core_logic\", \"persistence\"], \"task_ids\": [\"TSK-001\", \"TSK-002\"]}"
+    },
+    {
+      "id": "MOD-001::process_chess_game_service",
+      "kind": "FunctionSpec",
+      "content_hash": "325718053458a7b0319291c7a1c2dc589c40f99d50003237649465efeb69b31b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 10, \"name\": \"process_chess_game_service\", \"output_dto\": \"DTO-002\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for chess-game-service.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_chess_game_service(payload: ChessGameServiceRequest) -> ChessGameServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"chess_game_service_processed_total\"], \"span_name\": \"chess_game_service.process\", \"structured_log_events\": [\"chess_game_service_processed\"]}, \"transaction_boundary\": \"required\"}"
+    },
+    {
+      "id": "DTO-001",
+      "kind": "DataModelSpec",
+      "content_hash": "ba8df6acd38093b84aa856236a0baba4eb01b7c0308be19344fd028d4bfc30c8",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-001\", \"module_id\": \"MOD-001\", \"name\": \"ChessGameServiceRequest\", \"validators\": []}"
+    },
+    {
+      "id": "DTO-002",
+      "kind": "DataModelSpec",
+      "content_hash": "73badbab78639ddbd7a0542f0855fb17c292e6496d72d15ba4e74a910aeac3b7",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-002\", \"module_id\": \"MOD-001\", \"name\": \"ChessGameServiceResponse\", \"validators\": []}"
+    },
+    {
+      "id": "TBL-001",
+      "kind": "TableSpec",
+      "content_hash": "059c65ab0e86ee13af211314b0ee8d235d6e0212c7f2b8dc6f719922c951787b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-001\", \"indexes\": [[\"game_id\"]], \"module_id\": \"MOD-001\", \"owner_component_id\": \"SVC-001\", \"primary_key\": [\"record_id\"], \"table_name\": \"chess_game_service_records\"}"
+    },
+    {
+      "id": "ERR-001",
+      "kind": "ErrorSpec",
+      "content_hash": "abe62a5f04956ce844489f7712aed0eddc18b056da429a750cadad3c7a66706b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"exception_name\": \"ChessGameServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-001\", \"module_id\": \"MOD-001\", \"problem_type_uri\": \"https://errors.enterprise.internal/chess_game_service/domain-error\"}"
+    },
+    {
+      "id": "MOD-002",
+      "kind": "Module",
+      "content_hash": "df6a5d41f0c584bf7c45244cb12df9a6bd9f920833d02fd034b95f5e3ba5e4b0",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"component_id\": \"SVC-001\", \"config_keys\": [], \"data_models\": [], \"depends_on\": [\"MOD-001\"], \"errors\": [], \"id\": \"MOD-002\", \"layer\": \"api\", \"path\": \"services/chess_game_service/api_routes.py\", \"public_interface\": [{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 8, \"name\": \"handle_chess_game_service_endpoint\", \"output_dto\": \"DTO-002\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for chess-game-service and delegate to MOD-001.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_chess_game_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.chess_game_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}], \"responsibilities\": [\"HTTP endpoint router and RFC 7807 error mapping for chess-game-service\"], \"tables\": [], \"tags\": [\"api\", \"io\"], \"task_ids\": [\"TSK-001\", \"TSK-002\"]}"
+    },
+    {
+      "id": "MOD-002::handle_chess_game_service_endpoint",
+      "kind": "FunctionSpec",
+      "content_hash": "eb1b08455f3cb3d9c5fdbd18160db92c9c211b1f211e7cc566443ab1b2a23f90",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 8, \"name\": \"handle_chess_game_service_endpoint\", \"output_dto\": \"DTO-002\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for chess-game-service and delegate to MOD-001.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_chess_game_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.chess_game_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}"
+    },
+    {
+      "id": "MOD-003",
+      "kind": "Module",
+      "content_hash": "436d47e5c227ce11020242b513f94a566402a86400b558379afb65217998340b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"component_id\": \"SVC-002\", \"config_keys\": [\"CFG-002\"], \"data_models\": [{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-003\", \"module_id\": \"MOD-003\", \"name\": \"ChessEngineServiceRequest\", \"validators\": []}, {\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-004\", \"module_id\": \"MOD-003\", \"name\": \"ChessEngineServiceResponse\", \"validators\": []}], \"depends_on\": [], \"errors\": [{\"exception_name\": \"ChessEngineServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-002\", \"module_id\": \"MOD-003\", \"problem_type_uri\": \"https://errors.enterprise.internal/chess_engine_service/domain-error\"}], \"id\": \"MOD-003\", \"layer\": \"domain\", \"path\": \"services/chess_engine_service/domain_service.py\", \"public_interface\": [{\"ac_ids\": [\"AC-002-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 10, \"name\": \"process_chess_engine_service\", \"output_dto\": \"DTO-004\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for chess-engine-service.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_chess_engine_service(payload: ChessEngineServiceRequest) -> ChessEngineServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"chess_engine_service_processed_total\"], \"span_name\": \"chess_engine_service.process\", \"structured_log_events\": [\"chess_engine_service_processed\"]}, \"transaction_boundary\": \"required\"}], \"responsibilities\": [\"Core domain logic and persistence for chess-engine-service\"], \"tables\": [{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-002\", \"indexes\": [[\"game_id\"]], \"module_id\": \"MOD-003\", \"owner_component_id\": \"SVC-002\", \"primary_key\": [\"record_id\"], \"table_name\": \"chess_engine_service_records\"}], \"tags\": [\"core_logic\", \"persistence\"], \"task_ids\": [\"TSK-003\"]}"
+    },
+    {
+      "id": "MOD-003::process_chess_engine_service",
+      "kind": "FunctionSpec",
+      "content_hash": "3e569d1fe1d8a0c21c31d59ef440eb98eb2ec70fa14a841cdcd176d4c122003b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 10, \"name\": \"process_chess_engine_service\", \"output_dto\": \"DTO-004\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for chess-engine-service.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_chess_engine_service(payload: ChessEngineServiceRequest) -> ChessEngineServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"chess_engine_service_processed_total\"], \"span_name\": \"chess_engine_service.process\", \"structured_log_events\": [\"chess_engine_service_processed\"]}, \"transaction_boundary\": \"required\"}"
+    },
+    {
+      "id": "DTO-003",
+      "kind": "DataModelSpec",
+      "content_hash": "908d00034510f476a547d32320c8689d111ce84cf4595a0c4ff0fcd0a9369661",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-003\", \"module_id\": \"MOD-003\", \"name\": \"ChessEngineServiceRequest\", \"validators\": []}"
+    },
+    {
+      "id": "DTO-004",
+      "kind": "DataModelSpec",
+      "content_hash": "473eee89dd42e0671892549ff79ca10b4edc6532414a1e2fabe2730da94df672",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-004\", \"module_id\": \"MOD-003\", \"name\": \"ChessEngineServiceResponse\", \"validators\": []}"
+    },
+    {
+      "id": "TBL-002",
+      "kind": "TableSpec",
+      "content_hash": "58356cceb5f085de981aa8a9bd4a00ea716ed3f4183095a18d98e85e1b7b4c7c",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"game_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-002\", \"indexes\": [[\"game_id\"]], \"module_id\": \"MOD-003\", \"owner_component_id\": \"SVC-002\", \"primary_key\": [\"record_id\"], \"table_name\": \"chess_engine_service_records\"}"
+    },
+    {
+      "id": "ERR-002",
+      "kind": "ErrorSpec",
+      "content_hash": "a97aaa9bfde404e5141824dadfd2e15c1cfaa4b8ffc33f228d29498c41889229",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"exception_name\": \"ChessEngineServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-002\", \"module_id\": \"MOD-003\", \"problem_type_uri\": \"https://errors.enterprise.internal/chess_engine_service/domain-error\"}"
+    },
+    {
+      "id": "MOD-004",
+      "kind": "Module",
+      "content_hash": "18ac33bc6f76903860e0696aec6d81dae882a9b81ba928b8c5b2a25a0b994048",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"component_id\": \"SVC-002\", \"config_keys\": [], \"data_models\": [], \"depends_on\": [\"MOD-003\"], \"errors\": [], \"id\": \"MOD-004\", \"layer\": \"api\", \"path\": \"services/chess_engine_service/api_routes.py\", \"public_interface\": [{\"ac_ids\": [\"AC-002-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 8, \"name\": \"handle_chess_engine_service_endpoint\", \"output_dto\": \"DTO-004\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for chess-engine-service and delegate to MOD-003.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_chess_engine_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.chess_engine_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}], \"responsibilities\": [\"HTTP endpoint router and RFC 7807 error mapping for chess-engine-service\"], \"tables\": [], \"tags\": [\"api\", \"io\"], \"task_ids\": [\"TSK-003\"]}"
+    },
+    {
+      "id": "MOD-004::handle_chess_engine_service_endpoint",
+      "kind": "FunctionSpec",
+      "content_hash": "3b8b25c32866406282991902bf2d5921a604352dfc070e558f4e5d1ccb359b0a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 8, \"name\": \"handle_chess_engine_service_endpoint\", \"output_dto\": \"DTO-004\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for chess-engine-service and delegate to MOD-003.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_chess_engine_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.chess_engine_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}"
+    },
+    {
+      "id": "TST-001",
+      "kind": "Test",
+      "content_hash": "7ee6d63a2ed2c5c634b3efdd829f45b5e6e4eaeec4ef246aaa7d8739e4c65c3f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\"], \"file\": \"tests/acceptance/test_st_001.py\", \"id\": \"TST-001\"}"
+    },
+    {
+      "id": "TST-002",
+      "kind": "Test",
+      "content_hash": "5aa7330ca7581c348e12c80ad7abc8a8342bdb3cac69b0ecbd452114d8601520",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-02\"], \"file\": \"tests/acceptance/test_st_001.py\", \"id\": \"TST-002\"}"
+    },
+    {
+      "id": "TST-003",
+      "kind": "Test",
+      "content_hash": "0626ace74fc6d567c84d7561fb6a85191f7d7a2448e4f930644d6cc652aa9d05",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"file\": \"tests/acceptance/test_st_002.py\", \"id\": \"TST-003\"}"
+    },
+    {
+      "id": "BLD-001",
+      "kind": "BuildTask",
+      "content_hash": "9e61c57253892f5bc78078d03e9b099da40c6d32f62e5e969bf46781164baa8c",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [], \"files_owned\": [\"services/chess_game_service/domain_service.py\", \"tests/unit/test_mod_001.py\"], \"id\": \"BLD-001\", \"module_id\": \"MOD-001\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-002",
+      "kind": "BuildTask",
+      "content_hash": "29cfc15c293e767396e69376ec84abc400c3fd0f64245280c7facc95e604f022",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [\"BLD-001\"], \"files_owned\": [\"services/chess_game_service/api_routes.py\", \"tests/unit/test_mod_002.py\"], \"id\": \"BLD-002\", \"module_id\": \"MOD-002\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-003",
+      "kind": "BuildTask",
+      "content_hash": "1011f21a6943f01a6f4e9a41ea4a337d67d937b63feffe6b77e7db6a8fca539e",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [], \"files_owned\": [\"services/chess_engine_service/domain_service.py\", \"tests/unit/test_mod_003.py\"], \"id\": \"BLD-003\", \"module_id\": \"MOD-003\", \"task_ids\": [\"TSK-003\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-004",
+      "kind": "BuildTask",
+      "content_hash": "8df3f1cde04cc53d4f8c1454c1dc437e4dd3ac752b52e44d4f6178ac39813761",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [\"BLD-003\"], \"files_owned\": [\"services/chess_engine_service/api_routes.py\", \"tests/unit/test_mod_004.py\"], \"id\": \"BLD-004\", \"module_id\": \"MOD-004\", \"task_ids\": [\"TSK-003\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "SYM-MOD-003-ChessEngineServiceDomainError",
+      "kind": "CodeSymbol",
+      "content_hash": "4f7110147f5d3dc38be6c182df6316a368f1d3a13332d260d4d420732683fee2",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-ChessEngineServiceDomainError\", \"module_id\": \"MOD-003\", \"name\": \"ChessEngineServiceDomainError\", \"public\": true, \"realizes_id\": \"ERR-002\"}"
+    },
+    {
+      "id": "SYM-MOD-001-ChessGameServiceDomainError",
+      "kind": "CodeSymbol",
+      "content_hash": "37137d817c3adbc3efe42ad346ecc93ae786e96f7260d6b38a54f0d270013b30",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-ChessGameServiceDomainError\", \"module_id\": \"MOD-001\", \"name\": \"ChessGameServiceDomainError\", \"public\": true, \"realizes_id\": \"ERR-001\"}"
+    },
+    {
+      "id": "SYM-MOD-003-ChessEngineServiceRequest",
+      "kind": "CodeSymbol",
+      "content_hash": "24ffcfcbc81bb17e06207ac6e0056062bc9ddd1255efd2655c51d6b45e851e1e",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-ChessEngineServiceRequest\", \"module_id\": \"MOD-003\", \"name\": \"ChessEngineServiceRequest\", \"public\": true, \"realizes_id\": \"DTO-003\"}"
+    },
+    {
+      "id": "SYM-MOD-001-ChessGameServiceRequest",
+      "kind": "CodeSymbol",
+      "content_hash": "4a0dd1def901922bf79327de7c30405ae27d012fffab37fe0827c615665f5182",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-ChessGameServiceRequest\", \"module_id\": \"MOD-001\", \"name\": \"ChessGameServiceRequest\", \"public\": true, \"realizes_id\": \"DTO-001\"}"
+    },
+    {
+      "id": "SYM-MOD-003-ChessEngineServiceResponse",
+      "kind": "CodeSymbol",
+      "content_hash": "12a366401e4d74be7717e41b9c4f6a9e2fec68a9089468976081d524bd81d87e",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-ChessEngineServiceResponse\", \"module_id\": \"MOD-003\", \"name\": \"ChessEngineServiceResponse\", \"public\": true, \"realizes_id\": \"DTO-004\"}"
+    },
+    {
+      "id": "SYM-MOD-001-ChessGameServiceResponse",
+      "kind": "CodeSymbol",
+      "content_hash": "ddb169ee8d778bda6cfd35cdc9f50ca2829173d78bf09812c5ce9123a4985d4c",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-ChessGameServiceResponse\", \"module_id\": \"MOD-001\", \"name\": \"ChessGameServiceResponse\", \"public\": true, \"realizes_id\": \"DTO-002\"}"
+    },
+    {
+      "id": "SYM-MOD-003-process_chess_engine_service",
+      "kind": "CodeSymbol",
+      "content_hash": "480e2ceec574fe603cab3c4b458084081f826aa22970efedd18f429afbbb053b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-process_chess_engine_service\", \"module_id\": \"MOD-003\", \"name\": \"process_chess_engine_service\", \"public\": true, \"realizes_id\": \"MOD-003::process_chess_engine_service\"}"
+    },
+    {
+      "id": "SYM-MOD-001-process_chess_game_service",
+      "kind": "CodeSymbol",
+      "content_hash": "c02d863fec6f9d2d75a083851e45e631271f36618e6fd9c7ab44032d962b381f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-process_chess_game_service\", \"module_id\": \"MOD-001\", \"name\": \"process_chess_game_service\", \"public\": true, \"realizes_id\": \"MOD-001::process_chess_game_service\"}"
+    },
+    {
+      "id": "FND-001",
+      "kind": "Finding",
+      "content_hash": "c7055cd02cfcdbd68318199de6ada4cdf88fc71ad3e55982af0f0e6fdd9ece32",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"dimension\": \"correctness\", \"file\": \"services/chess_engine_service/api_routes.py\", \"id\": \"FND-001\", \"impact\": \"Edge-case whitespace input requires explicit normalization before persistence.\", \"line\": 1, \"quote\": \"\\\"\\\"\\\"Enterprise implementation f\", \"refs\": [\"AC-002-01\", \"MOD-004\"], \"repro_artifact\": null, \"rule\": \"BOUNDARY_VALIDATION\", \"severity\": \"major\", \"source\": \"reviewer\", \"status\": \"verified\", \"symbol_name\": \"handle_chess_engine_service_endpoint\"}"
+    },
+    {
+      "id": "RSK-001",
+      "kind": "RiskPattern",
+      "content_hash": "8cf5247ec5711d323ed9c2ebefbcc962c8929c725978986e1669a7fbefffb22a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"id\": \"RSK-001\", \"module_id\": \"MOD-004\", \"rule\": \"BOUNDARY_VALIDATION\", \"summary\": \"Resolved BOUNDARY_VALIDATION in MOD-004\"}"
+    },
+    {
+      "id": "SYM-MOD-004-handle_chess_engine_service_endpoint",
+      "kind": "CodeSymbol",
+      "content_hash": "2cfa98c13263d194c9ee8694d2c1a1deae2e7f1c7150a0b34693c7f03ad582a7",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-004\", \"id\": \"SYM-MOD-004-handle_chess_engine_service_endpoint\", \"module_id\": \"MOD-004\", \"name\": \"handle_chess_engine_service_endpoint\", \"public\": true, \"realizes_id\": \"MOD-004::handle_chess_engine_service_endpoint\"}"
+    },
+    {
+      "id": "SYM-MOD-002-handle_chess_game_service_endpoint",
+      "kind": "CodeSymbol",
+      "content_hash": "035c87a481e28e18c0dcf220f4bd240fdf2faac60037aabfbfd445fcb0dedc0e",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-002\", \"id\": \"SYM-MOD-002-handle_chess_game_service_endpoint\", \"module_id\": \"MOD-002\", \"name\": \"handle_chess_game_service_endpoint\", \"public\": true, \"realizes_id\": \"MOD-002::handle_chess_game_service_endpoint\"}"
+    }
+  ],
+  "edges": [
+    {
+      "src": "TSK-001",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "TSK-002",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-001-01",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-001-02",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "TSK-003",
+      "dst": "ST-002",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-002-01",
+      "dst": "ST-002",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "INV-001",
+      "dst": "ST-001",
+      "rel": "GUARDS",
+      "epoch": 0
+    },
+    {
+      "src": "INV-001",
+      "dst": "ST-002",
+      "rel": "GUARDS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "NFR-001",
+      "rel": "SATISFIES",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "ADR-001",
+      "rel": "DECIDED_BY",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "NFR-001",
+      "rel": "SATISFIES",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "ADR-001",
+      "rel": "DECIDED_BY",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "SVC-002",
+      "rel": "DEPENDS_ON",
+      "epoch": 0
+    },
+    {
+      "src": "MOD-001",
+      "dst": "SVC-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "AC-001-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "AC-001-02",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001::process_chess_game_service",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-002",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TBL-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "ERR-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "SVC-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "AC-001-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "AC-001-02",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "MOD-001",
+      "rel": "DEPENDS_ON",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002::handle_chess_game_service_endpoint",
+      "dst": "MOD-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "SVC-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "AC-002-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003::process_chess_engine_service",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-003",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-004",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TBL-002",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "ERR-002",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "SVC-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "AC-002-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "MOD-003",
+      "rel": "DEPENDS_ON",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004::handle_chess_engine_service_endpoint",
+      "dst": "MOD-004",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TST-001",
+      "dst": "AC-001-01",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "TST-002",
+      "dst": "AC-001-02",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "TST-003",
+      "dst": "AC-002-01",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "BLD-001",
+      "dst": "MOD-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-002",
+      "dst": "MOD-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-002",
+      "dst": "BLD-001",
+      "rel": "DEPENDS_ON",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-003",
+      "dst": "MOD-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-004",
+      "dst": "MOD-004",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-004",
+      "dst": "BLD-003",
+      "rel": "DEPENDS_ON",
+      "epoch": 3
+    },
+    {
+      "src": "SYM-MOD-003-ChessEngineServiceDomainError",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-ChessEngineServiceDomainError",
+      "dst": "ERR-002",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-ChessEngineServiceRequest",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-ChessEngineServiceRequest",
+      "dst": "DTO-003",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-ChessEngineServiceResponse",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-ChessEngineServiceResponse",
+      "dst": "DTO-004",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-process_chess_engine_service",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-process_chess_engine_service",
+      "dst": "MOD-003::process_chess_engine_service",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-ChessGameServiceDomainError",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-ChessGameServiceDomainError",
+      "dst": "ERR-001",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-ChessGameServiceRequest",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-ChessGameServiceRequest",
+      "dst": "DTO-001",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-003",
+      "rel": "RAISED_ON",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-ChessGameServiceResponse",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-ChessGameServiceResponse",
+      "dst": "DTO-002",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-003",
+      "rel": "GUARDS",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-process_chess_game_service",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-process_chess_game_service",
+      "dst": "MOD-001::process_chess_game_service",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-001",
+      "rel": "RAISED_ON",
+      "epoch": 4
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-001",
+      "rel": "GUARDS",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-002-handle_chess_game_service_endpoint",
+      "dst": "MOD-002",
+      "rel": "OWNED_BY",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-002-handle_chess_game_service_endpoint",
+      "dst": "MOD-002::handle_chess_game_service_endpoint",
+      "rel": "REALIZES",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-004-handle_chess_engine_service_endpoint",
+      "dst": "MOD-004",
+      "rel": "OWNED_BY",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-004-handle_chess_engine_service_endpoint",
+      "dst": "MOD-004::handle_chess_engine_service_endpoint",
+      "rel": "REALIZES",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "AC-001-01",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-002",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-002",
+      "rel": "GUARDS",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "AC-002-01",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-004",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-004",
+      "rel": "GUARDS",
+      "epoch": 6
+    }
+  ],
+  "test_runs": [
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    }
+  ]
+}

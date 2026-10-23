@@ -1,0 +1,28 @@
+{
+  "commit_sha": "trunk-epoch-8",
+  "db_migration_verified": true,
+  "graph_epoch": 8,
+  "handoff_hash": "cf0c064e411fd7cfc1b0f042af915d75b5d4a01c83ad779669fc19c58456f117",
+  "iac_plan": "helm/values.yaml",
+  "images": [
+    "registry.enterprise.internal/order-service@sha256:cf0c064e411fd7cfc1b0f042af915d75b5d4a01c83ad779669fc19c58456f117",
+    "registry.enterprise.internal/inventory-service@sha256:cf0c064e411fd7cfc1b0f042af915d75b5d4a01c83ad779669fc19c58456f117"
+  ],
+  "lld_hash": "94b315fe1f5d12d4d49f89d34d231cf2cf98dd852333aba217cb59c3b99fd12d",
+  "provenance": "release_bundle/provenance.intoto.jsonl",
+  "review": {
+    "change_manifest_json": "release_bundle/change-manifest.json",
+    "findings_json": "release_bundle/review-findings.json",
+    "requirements_trace_json": "release_bundle/requirements-trace.json",
+    "security_sarif": "release_bundle/security-results.sarif",
+    "summary_md": "release_bundle/review-summary.md",
+    "suppressions_yaml": "release_bundle/suppressions.yaml",
+    "test_evidence_json": "release_bundle/test-evidence.json",
+    "unresolved_md": "release_bundle/unresolved-findings.md"
+  },
+  "run_id": "run-2026-10-22-001",
+  "runbook": "release_bundle/runbook.md",
+  "sandbox_url": "https://sandbox.hnd-order-inventory-001.k3s.internal",
+  "sbom": "release_bundle/sbom.spdx.json",
+  "smoke_passed": true
+}

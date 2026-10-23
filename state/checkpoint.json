@@ -1,0 +1,37 @@
+{
+  "run_id": "run-2026-10-22-001",
+  "handoff_file": "examples/sample_handoff.json",
+  "workspace_dir": "workspace_build",
+  "current_stage": "G2_RELEASE_READY",
+  "lld_approved": "YES",
+  "graph_epoch": 8,
+  "completed_stages": [
+    "H0_INTAKE",
+    "L1_LLD",
+    "L2_SCAFFOLD",
+    "L2_ORACLE",
+    "L3_BUILD",
+    "L4_VERIFY_TASK",
+    "L5_REVIEW_LOOP",
+    "L4_VERIFY_TRUNK",
+    "L6_CONFORMANCE",
+    "L7_DEPLOY"
+  ],
+  "completed_waves": [
+    0,
+    1
+  ],
+  "completed_build_tasks": [
+    "BLD-001",
+    "BLD-003",
+    "BLD-002",
+    "BLD-004"
+  ],
+  "pending_build_tasks": [],
+  "lld_replan_count": 0,
+  "task_split_count": 0,
+  "last_status": "COMPLETED",
+  "next_command": "python -m pipeline.cli status --state-dir state",
+  "updated_at": "2026-10-22T22:49:28.915193+00:00",
+  "notes": "Deployable code & ReleaseBundle ready in workspace_build/release_bundle/release-bundle.json"
+}

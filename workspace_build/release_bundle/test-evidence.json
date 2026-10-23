@@ -1,0 +1,42 @@
+{
+  "matrix_complete": true,
+  "uncovered_acs": [],
+  "unimplemented_tasks": [],
+  "unrequested_components": [],
+  "journeys": [
+    {
+      "story_id": "ST-001",
+      "steps": [
+        {
+          "step": "AC-001-01: Given a valid order_sku and positive quantity When the order endpoint is called Then the order is persisted with status PROCESSED",
+          "expected": "HTTP 200 PROCESSED & AC oracle green",
+          "observed": "HTTP 200 PROCESSED",
+          "passed": true,
+          "evidence": "c8f1e88d6494e7a6a230d61d42c5d870139c88eb5495799a6fde3f404491549e"
+        },
+        {
+          "step": "AC-001-02: Given a zero or negative quantity When the order endpoint is called Then a 422 DomainError is raised",
+          "expected": "HTTP 200 PROCESSED & AC oracle green",
+          "observed": "HTTP 200 PROCESSED",
+          "passed": true,
+          "evidence": "50f9752d9cdab3503f8ca0d17bbf0a6b5d4d61aebbc460185517ef6bef09c280"
+        }
+      ]
+    },
+    {
+      "story_id": "ST-002",
+      "steps": [
+        {
+          "step": "AC-002-01: Given an approved order_sku When inventory reservation runs Then stock is reserved with status PROCESSED",
+          "expected": "HTTP 200 PROCESSED & AC oracle green",
+          "observed": "HTTP 200 PROCESSED",
+          "passed": true,
+          "evidence": "a426dfa2e27adba76fa1ea576d32cfd4376e0d82a2938359d8482dd9a2842496"
+        }
+      ]
+    }
+  ],
+  "advisory_reverse_spec_notes": [
+    "Reverse-spec diff matches declared OpenAPI contracts with zero undocumented routes."
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "run_id": "run-2026-10-22-001",
+  "tasks": [
+    {
+      "task_id": "BLD-001",
+      "module_id": "MOD-001",
+      "wave_index": 0,
+      "base_epoch": 4,
+      "merged_epoch": 5,
+      "reverified_after_neighbor_delta": false,
+      "outcome": "converged",
+      "findings": [
+        {
+          "finding": {
+            "id": "FND-001",
+            "dimension": "correctness",
+            "severity": "major",
+            "rule": "BOUNDARY_VALIDATION",
+            "file": "services/order_service/domain_service.py",
+            "line": 1,
+            "symbol_name": "process_order_service",
+            "quote": "\"\"\"Enterprise implementation f",
+            "impact": "Edge-case whitespace input requires explicit normalization before persistence.",
+            "refs": [
+              "AC-001-01",
+              "MOD-001"
+            ],
+            "repro_artifact": null,
+            "source": "reviewer"
+          },
+          "status": "verified"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "task_id": "BLD-003",
+      "module_id": "MOD-003",
+      "wave_index": 0,
+      "base_epoch": 4,
+      "merged_epoch": 6,
+      "reverified_after_neighbor_delta": false,
+      "outcome": "converged",
+      "findings": [
+        {
+          "finding": {
+            "id": "FND-001",
+            "dimension": "correctness",
+            "severity": "major",
+            "rule": "BOUNDARY_VALIDATION",
+            "file": "services/inventory_service/domain_service.py",
+            "line": 1,
+            "symbol_name": "process_inventory_service",
+            "quote": "\"\"\"Enterprise implementation f",
+            "impact": "Edge-case whitespace input requires explicit normalization before persistence.",
+            "refs": [
+              "AC-002-01",
+              "MOD-003"
+            ],
+            "repro_artifact": null,
+            "source": "reviewer"
+          },
+          "status": "verified"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "task_id": "BLD-002",
+      "module_id": "MOD-002",
+      "wave_index": 1,
+      "base_epoch": 6,
+      "merged_epoch": 7,
+      "reverified_after_neighbor_delta": false,
+      "outcome": "converged",
+      "findings": [
+        {
+          "finding": {
+            "id": "FND-001",
+            "dimension": "correctness",
+            "severity": "major",
+            "rule": "BOUNDARY_VALIDATION",
+            "file": "services/order_service/api_routes.py",
+            "line": 1,
+            "symbol_name": "handle_order_service_endpoint",
+            "quote": "\"\"\"Enterprise implementation f",
+            "impact": "Edge-case whitespace input requires explicit normalization before persistence.",
+            "refs": [
+              "AC-001-01",
+              "MOD-002"
+            ],
+            "repro_artifact": null,
+            "source": "reviewer"
+          },
+          "status": "verified"
+        }
+      ],
+      "unresolved": []
+    },
+    {
+      "task_id": "BLD-004",
+      "module_id": "MOD-004",
+      "wave_index": 1,
+      "base_epoch": 6,
+      "merged_epoch": 8,
+      "reverified_after_neighbor_delta": false,
+      "outcome": "converged",
+      "findings": [
+        {
+          "finding": {
+            "id": "FND-001",
+            "dimension": "correctness",
+            "severity": "major",
+            "rule": "BOUNDARY_VALIDATION",
+            "file": "services/inventory_service/api_routes.py",
+            "line": 1,
+            "symbol_name": "handle_inventory_service_endpoint",
+            "quote": "\"\"\"Enterprise implementation f",
+            "impact": "Edge-case whitespace input requires explicit normalization before persistence.",
+            "refs": [
+              "AC-002-01",
+              "MOD-004"
+            ],
+            "repro_artifact": null,
+            "source": "reviewer"
+          },
+          "status": "verified"
+        }
+      ],
+      "unresolved": []
+    }
+  ]
+}

@@ -1,0 +1,1118 @@
+{
+  "meta": [
+    {
+      "key": "epoch",
+      "value": "8"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ST-001",
+      "kind": "Story",
+      "content_hash": "65562cbe8d2067827e6c42067166749a38d3b35f2c85cda9450dbef4924c818b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"criteria\": [{\"gherkin\": \"Given a valid order_sku and positive quantity When the order endpoint is called Then the order is persisted with status PROCESSED\", \"id\": \"AC-001-01\"}, {\"gherkin\": \"Given a zero or negative quantity When the order endpoint is called Then a 422 DomainError is raised\", \"id\": \"AC-001-02\"}], \"epic_id\": \"EP-001\", \"source_anchor\": \"PRD-Section-3.1\", \"story_id\": \"ST-001\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"title\": \"Create Validated Customer Order\"}"
+    },
+    {
+      "id": "TSK-001",
+      "kind": "Task",
+      "content_hash": "46a54bd50a82164f761dd8e717de2ca68eec37139b4137990e3201c5520c104a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-001\", \"story_id\": \"ST-001\"}"
+    },
+    {
+      "id": "TSK-002",
+      "kind": "Task",
+      "content_hash": "23e23ffb4c7b9fbe2f2ed531f8620d898eaa8392842f0dfaa83b98c79e632bdd",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-002\", \"story_id\": \"ST-001\"}"
+    },
+    {
+      "id": "AC-001-01",
+      "kind": "AC",
+      "content_hash": "1b71111f13d3b846d5a652add33b8747426520d2041d7fad7cc60493a7a4c7d0",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given a valid order_sku and positive quantity When the order endpoint is called Then the order is persisted with status PROCESSED\", \"id\": \"AC-001-01\"}"
+    },
+    {
+      "id": "AC-001-02",
+      "kind": "AC",
+      "content_hash": "5f3de7a6ef1b2f009a53039cd20b3c4fa59cedd49be58f33b444fcb0b5447de1",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given a zero or negative quantity When the order endpoint is called Then a 422 DomainError is raised\", \"id\": \"AC-001-02\"}"
+    },
+    {
+      "id": "ST-002",
+      "kind": "Story",
+      "content_hash": "f7426c0707aa306204e4777e99fb72eecda2d379e899caa653f235d67c9f608f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"criteria\": [{\"gherkin\": \"Given an approved order_sku When inventory reservation runs Then stock is reserved with status PROCESSED\", \"id\": \"AC-002-01\"}], \"epic_id\": \"EP-001\", \"source_anchor\": \"PRD-Section-3.2\", \"story_id\": \"ST-002\", \"task_ids\": [\"TSK-003\"], \"title\": \"Reserve Inventory Stock\"}"
+    },
+    {
+      "id": "TSK-003",
+      "kind": "Task",
+      "content_hash": "f123abe9e1c3f6de62e4acb6b303d656b158398f2566964a67b21d987272adb1",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-003\", \"story_id\": \"ST-002\"}"
+    },
+    {
+      "id": "AC-002-01",
+      "kind": "AC",
+      "content_hash": "16a2645faede2744d7e99bef35f2e31473296ed926fff4756301aed89e0f3d04",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given an approved order_sku When inventory reservation runs Then stock is reserved with status PROCESSED\", \"id\": \"AC-002-01\"}"
+    },
+    {
+      "id": "NFR-001",
+      "kind": "NFR",
+      "content_hash": "42b8d54d913b917f68112b3e34e4161ed4071fc412f9f5c1aa7ae75aa8e418ff",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"assumption\": false, \"comparator\": \"<=\", \"id\": \"NFR-001\", \"metric\": \"p95_latency_ms\", \"statement\": \"P95 order processing latency must be under 150ms\", \"threshold\": 150.0, \"unit\": \"ms\"}"
+    },
+    {
+      "id": "ADR-001",
+      "kind": "ADR",
+      "content_hash": "d945cf5e059c577fb0552d3a97626813028458f95bf496b36fade1c8852b6a51",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"decision\": \"Enforce domain <- api dependency direction per service component.\", \"id\": \"ADR-001\", \"level\": 1, \"status\": \"accepted\", \"title\": \"Hexagonal Modular Monolith with Strict Layer Contracts\"}"
+    },
+    {
+      "id": "TERM-order_sku",
+      "kind": "DomainTerm",
+      "content_hash": "8e9794010faeea4b1337a9d04b621fa40c84281505635fb20edf2b962d847915",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"canonical_snake\": \"order_sku\", \"classification\": \"confidential\", \"definition\": \"Unique stock keeping identifier for a customer line item.\", \"term\": \"Order SKU\"}"
+    },
+    {
+      "id": "INV-001",
+      "kind": "BusinessInvariant",
+      "content_hash": "51a4453869ae3361e753ae455789e21107e9316660526513a1ac0b1b7e207a9f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"applies_to_stories\": [\"ST-001\", \"ST-002\"], \"id\": \"INV-001\", \"statement\": \"Every order line item must have a strictly positive quantity and non-empty order_sku.\"}"
+    },
+    {
+      "id": "SVC-001",
+      "kind": "Component",
+      "content_hash": "d1f8c9b8a8d09db9bc8a37a1c722a60e7347033aab34bcbbe85abffad8517c4b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"adr_ids\": [\"ADR-001\"], \"architectural_reasoning\": \"Handles synchronous order creation and validation under NFR-001.\", \"id\": \"SVC-001\", \"linked_task_ids\": [\"TSK-001\", \"TSK-002\"], \"name\": \"order-service\", \"responsibilities\": [\"Validate and persist customer orders\"], \"satisfies_nfrs\": [\"NFR-001\"], \"storage_type\": \"PostgreSQL\", \"technology_stack\": \"Python 3.12 / FastAPI / PostgreSQL\", \"tier\": \"Application Backend Service\"}"
+    },
+    {
+      "id": "SVC-002",
+      "kind": "Component",
+      "content_hash": "05ec41f722094cd5968d5a4c9cf7bec31d8715cd2797053bf5ee25eb99391a68",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"adr_ids\": [\"ADR-001\"], \"architectural_reasoning\": \"Isolates stock ledger mutations while sharing modular monolith deployment.\", \"id\": \"SVC-002\", \"linked_task_ids\": [\"TSK-003\"], \"name\": \"inventory-service\", \"responsibilities\": [\"Reserve and track inventory stock for orders\"], \"satisfies_nfrs\": [\"NFR-001\"], \"storage_type\": \"PostgreSQL\", \"technology_stack\": \"Python 3.12 / FastAPI / PostgreSQL\", \"tier\": \"Application Backend Service\"}"
+    },
+    {
+      "id": "CON-001",
+      "kind": "Contract",
+      "content_hash": "5281f84b8888ccee8094c009e7b33425a2966608a3b5ac7ea8350044be186907",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"auth_scopes\": [\"SEC-001\"], \"id\": \"CON-001\", \"kind\": \"openapi\", \"path\": \"contracts/con-001.yaml\", \"sha256\": \"c3c18b5ba304d0247d52497a8ece48995fceb88c7d9ea0d3bc3142db0a90baad\"}"
+    },
+    {
+      "id": "MOD-001",
+      "kind": "Module",
+      "content_hash": "a252d1987cf9ecd6f165b11f22edeef93e53cc35536ea4a1e5fe3330683c9d77",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"component_id\": \"SVC-001\", \"config_keys\": [\"CFG-001\"], \"data_models\": [{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-001\", \"module_id\": \"MOD-001\", \"name\": \"OrderServiceRequest\", \"validators\": []}, {\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-002\", \"module_id\": \"MOD-001\", \"name\": \"OrderServiceResponse\", \"validators\": []}], \"depends_on\": [], \"errors\": [{\"exception_name\": \"OrderServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-001\", \"module_id\": \"MOD-001\", \"problem_type_uri\": \"https://errors.enterprise.internal/order_service/domain-error\"}], \"id\": \"MOD-001\", \"layer\": \"domain\", \"path\": \"services/order_service/domain_service.py\", \"public_interface\": [{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 10, \"name\": \"process_order_service\", \"output_dto\": \"DTO-002\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for order-service.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_order_service(payload: OrderServiceRequest) -> OrderServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"order_service_processed_total\"], \"span_name\": \"order_service.process\", \"structured_log_events\": [\"order_service_processed\"]}, \"transaction_boundary\": \"required\"}], \"responsibilities\": [\"Core domain logic and persistence for order-service\"], \"tables\": [{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-001\", \"indexes\": [[\"order_sku\"]], \"module_id\": \"MOD-001\", \"owner_component_id\": \"SVC-001\", \"primary_key\": [\"record_id\"], \"table_name\": \"order_service_records\"}], \"tags\": [\"core_logic\", \"persistence\"], \"task_ids\": [\"TSK-001\", \"TSK-002\"]}"
+    },
+    {
+      "id": "MOD-001::process_order_service",
+      "kind": "FunctionSpec",
+      "content_hash": "8016457c50dc3e16024e1e66878eae8f7401f7d8e91eabd38d5967e3e57e17c0",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 10, \"name\": \"process_order_service\", \"output_dto\": \"DTO-002\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for order-service.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_order_service(payload: OrderServiceRequest) -> OrderServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"order_service_processed_total\"], \"span_name\": \"order_service.process\", \"structured_log_events\": [\"order_service_processed\"]}, \"transaction_boundary\": \"required\"}"
+    },
+    {
+      "id": "DTO-001",
+      "kind": "DataModelSpec",
+      "content_hash": "7678573ff96c161c5f904b3eed15cb6bf8f30549ceece2ad3a3bbd0335dbab37",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-001\", \"module_id\": \"MOD-001\", \"name\": \"OrderServiceRequest\", \"validators\": []}"
+    },
+    {
+      "id": "DTO-002",
+      "kind": "DataModelSpec",
+      "content_hash": "f4d3fd87ab4bf4db2ea6739b1926a456682c6b4acf4802369277d24ca70f238a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-002\", \"module_id\": \"MOD-001\", \"name\": \"OrderServiceResponse\", \"validators\": []}"
+    },
+    {
+      "id": "TBL-001",
+      "kind": "TableSpec",
+      "content_hash": "75b926927ad521998d30ab95af500e7894dba4ec54c8a1a08ca04db072e47a66",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-001\", \"indexes\": [[\"order_sku\"]], \"module_id\": \"MOD-001\", \"owner_component_id\": \"SVC-001\", \"primary_key\": [\"record_id\"], \"table_name\": \"order_service_records\"}"
+    },
+    {
+      "id": "ERR-001",
+      "kind": "ErrorSpec",
+      "content_hash": "476c23e44994eedd270e931753dfb737086ef219015b8161253ec371584415d3",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"exception_name\": \"OrderServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-001\", \"module_id\": \"MOD-001\", \"problem_type_uri\": \"https://errors.enterprise.internal/order_service/domain-error\"}"
+    },
+    {
+      "id": "MOD-002",
+      "kind": "Module",
+      "content_hash": "b586a737be579d0745d6e35edc10f642d0497dd6f44e536aaf95a3222d8610ae",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"component_id\": \"SVC-001\", \"config_keys\": [], \"data_models\": [], \"depends_on\": [\"MOD-001\"], \"errors\": [], \"id\": \"MOD-002\", \"layer\": \"api\", \"path\": \"services/order_service/api_routes.py\", \"public_interface\": [{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 8, \"name\": \"handle_order_service_endpoint\", \"output_dto\": \"DTO-002\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for order-service and delegate to MOD-001.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_order_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.order_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}], \"responsibilities\": [\"HTTP endpoint router and RFC 7807 error mapping for order-service\"], \"tables\": [], \"tags\": [\"api\", \"io\"], \"task_ids\": [\"TSK-001\", \"TSK-002\"]}"
+    },
+    {
+      "id": "MOD-002::handle_order_service_endpoint",
+      "kind": "FunctionSpec",
+      "content_hash": "206b0dbdddf8c9fa4dad0b87df6e8f2c99f3c1d295ac6ac99958e8d835069666",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 8, \"name\": \"handle_order_service_endpoint\", \"output_dto\": \"DTO-002\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for order-service and delegate to MOD-001.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_order_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.order_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}"
+    },
+    {
+      "id": "MOD-003",
+      "kind": "Module",
+      "content_hash": "2f63c46ca22c63cc0c47ee212dabbb4c5bcc814ba52ad37258d4914eb5e978b9",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"component_id\": \"SVC-002\", \"config_keys\": [\"CFG-002\"], \"data_models\": [{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-003\", \"module_id\": \"MOD-003\", \"name\": \"InventoryServiceRequest\", \"validators\": []}, {\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-004\", \"module_id\": \"MOD-003\", \"name\": \"InventoryServiceResponse\", \"validators\": []}], \"depends_on\": [], \"errors\": [{\"exception_name\": \"InventoryServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-002\", \"module_id\": \"MOD-003\", \"problem_type_uri\": \"https://errors.enterprise.internal/inventory_service/domain-error\"}], \"id\": \"MOD-003\", \"layer\": \"domain\", \"path\": \"services/inventory_service/domain_service.py\", \"public_interface\": [{\"ac_ids\": [\"AC-002-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 10, \"name\": \"process_inventory_service\", \"output_dto\": \"DTO-004\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for inventory-service.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_inventory_service(payload: InventoryServiceRequest) -> InventoryServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"inventory_service_processed_total\"], \"span_name\": \"inventory_service.process\", \"structured_log_events\": [\"inventory_service_processed\"]}, \"transaction_boundary\": \"required\"}], \"responsibilities\": [\"Core domain logic and persistence for inventory-service\"], \"tables\": [{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-002\", \"indexes\": [[\"order_sku\"]], \"module_id\": \"MOD-003\", \"owner_component_id\": \"SVC-002\", \"primary_key\": [\"record_id\"], \"table_name\": \"inventory_service_records\"}], \"tags\": [\"core_logic\", \"persistence\"], \"task_ids\": [\"TSK-003\"]}"
+    },
+    {
+      "id": "MOD-003::process_inventory_service",
+      "kind": "FunctionSpec",
+      "content_hash": "72e81f27aa132fbf183e9849b7384d84182df75c639cd0f2a0b22e7b6665063a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 10, \"name\": \"process_inventory_service\", \"output_dto\": \"DTO-004\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for inventory-service.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_inventory_service(payload: InventoryServiceRequest) -> InventoryServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"inventory_service_processed_total\"], \"span_name\": \"inventory_service.process\", \"structured_log_events\": [\"inventory_service_processed\"]}, \"transaction_boundary\": \"required\"}"
+    },
+    {
+      "id": "DTO-003",
+      "kind": "DataModelSpec",
+      "content_hash": "3c5a3aa7cff4a1700e389d6053957b05541769a81de31d644a3cd4980cf63c91",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-003\", \"module_id\": \"MOD-003\", \"name\": \"InventoryServiceRequest\", \"validators\": []}"
+    },
+    {
+      "id": "DTO-004",
+      "kind": "DataModelSpec",
+      "content_hash": "18a50a4992f820f283797a699d7ac08f0e769bb33d262a860452e76947c1765a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-004\", \"module_id\": \"MOD-003\", \"name\": \"InventoryServiceResponse\", \"validators\": []}"
+    },
+    {
+      "id": "TBL-002",
+      "kind": "TableSpec",
+      "content_hash": "b166b75cedb84b94a23c14dfd28eccd59ce5fd4ead8719ade43ad7bab07d7245",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"order_sku\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-002\", \"indexes\": [[\"order_sku\"]], \"module_id\": \"MOD-003\", \"owner_component_id\": \"SVC-002\", \"primary_key\": [\"record_id\"], \"table_name\": \"inventory_service_records\"}"
+    },
+    {
+      "id": "ERR-002",
+      "kind": "ErrorSpec",
+      "content_hash": "f5eb421ea100245f5e7dbf2faf8b2e0a0619579bc38da99137787bbc3a920057",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"exception_name\": \"InventoryServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-002\", \"module_id\": \"MOD-003\", \"problem_type_uri\": \"https://errors.enterprise.internal/inventory_service/domain-error\"}"
+    },
+    {
+      "id": "MOD-004",
+      "kind": "Module",
+      "content_hash": "9d26d943f5a1a64a46b0feb3e26a9d11cbcb1983866037da2b5c22f91d364023",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"component_id\": \"SVC-002\", \"config_keys\": [], \"data_models\": [], \"depends_on\": [\"MOD-003\"], \"errors\": [], \"id\": \"MOD-004\", \"layer\": \"api\", \"path\": \"services/inventory_service/api_routes.py\", \"public_interface\": [{\"ac_ids\": [\"AC-002-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 8, \"name\": \"handle_inventory_service_endpoint\", \"output_dto\": \"DTO-004\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for inventory-service and delegate to MOD-003.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_inventory_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.inventory_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}], \"responsibilities\": [\"HTTP endpoint router and RFC 7807 error mapping for inventory-service\"], \"tables\": [], \"tags\": [\"api\", \"io\"], \"task_ids\": [\"TSK-003\"]}"
+    },
+    {
+      "id": "MOD-004::handle_inventory_service_endpoint",
+      "kind": "FunctionSpec",
+      "content_hash": "bfcd7fb0d9d0dcceb4b19af5d7b9b9cd936905c9c926f8eebb194c46b5778949",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 8, \"name\": \"handle_inventory_service_endpoint\", \"output_dto\": \"DTO-004\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for inventory-service and delegate to MOD-003.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_inventory_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.inventory_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}"
+    },
+    {
+      "id": "TST-001",
+      "kind": "Test",
+      "content_hash": "7ee6d63a2ed2c5c634b3efdd829f45b5e6e4eaeec4ef246aaa7d8739e4c65c3f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\"], \"file\": \"tests/acceptance/test_st_001.py\", \"id\": \"TST-001\"}"
+    },
+    {
+      "id": "TST-002",
+      "kind": "Test",
+      "content_hash": "5aa7330ca7581c348e12c80ad7abc8a8342bdb3cac69b0ecbd452114d8601520",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-02\"], \"file\": \"tests/acceptance/test_st_001.py\", \"id\": \"TST-002\"}"
+    },
+    {
+      "id": "TST-003",
+      "kind": "Test",
+      "content_hash": "0626ace74fc6d567c84d7561fb6a85191f7d7a2448e4f930644d6cc652aa9d05",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"file\": \"tests/acceptance/test_st_002.py\", \"id\": \"TST-003\"}"
+    },
+    {
+      "id": "BLD-001",
+      "kind": "BuildTask",
+      "content_hash": "340cc88963c1e347d16dc7a9175e623926a2431e6c08cd5ad0a2f87be4d759b9",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [], \"files_owned\": [\"services/order_service/domain_service.py\", \"tests/unit/test_mod_001.py\"], \"id\": \"BLD-001\", \"module_id\": \"MOD-001\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-002",
+      "kind": "BuildTask",
+      "content_hash": "7809762426922bf11e924fc8ebc091a402e8a2ea25ade20f1667d5c59e790f81",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [\"BLD-001\"], \"files_owned\": [\"services/order_service/api_routes.py\", \"tests/unit/test_mod_002.py\"], \"id\": \"BLD-002\", \"module_id\": \"MOD-002\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-003",
+      "kind": "BuildTask",
+      "content_hash": "12560437c7662e2dec56f3804a67ccce90d4c24cade00085ce5b237880526b7b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [], \"files_owned\": [\"services/inventory_service/domain_service.py\", \"tests/unit/test_mod_003.py\"], \"id\": \"BLD-003\", \"module_id\": \"MOD-003\", \"task_ids\": [\"TSK-003\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-004",
+      "kind": "BuildTask",
+      "content_hash": "c47fa423038e7f9b1e97158b3c85d3edcd895b1da01a7247528b9572e7448f17",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [\"BLD-003\"], \"files_owned\": [\"services/inventory_service/api_routes.py\", \"tests/unit/test_mod_004.py\"], \"id\": \"BLD-004\", \"module_id\": \"MOD-004\", \"task_ids\": [\"TSK-003\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "SYM-MOD-003-InventoryServiceDomainError",
+      "kind": "CodeSymbol",
+      "content_hash": "0a2bd072bfbce8324dad28afee6908a549d18844d57d86a4f9dc842f70d61eb2",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-InventoryServiceDomainError\", \"module_id\": \"MOD-003\", \"name\": \"InventoryServiceDomainError\", \"public\": true, \"realizes_id\": \"ERR-002\"}"
+    },
+    {
+      "id": "SYM-MOD-001-OrderServiceDomainError",
+      "kind": "CodeSymbol",
+      "content_hash": "b8a9e37cfbfb7509646f99c5a89bd2bfbd4c9f5a87f90b2a24577a0230827532",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-OrderServiceDomainError\", \"module_id\": \"MOD-001\", \"name\": \"OrderServiceDomainError\", \"public\": true, \"realizes_id\": \"ERR-001\"}"
+    },
+    {
+      "id": "SYM-MOD-003-InventoryServiceRequest",
+      "kind": "CodeSymbol",
+      "content_hash": "a976c65ede47634d414f00eaf21571545a4d95e52d24bb5d2c69a8167de207c2",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-InventoryServiceRequest\", \"module_id\": \"MOD-003\", \"name\": \"InventoryServiceRequest\", \"public\": true, \"realizes_id\": \"DTO-003\"}"
+    },
+    {
+      "id": "SYM-MOD-001-OrderServiceRequest",
+      "kind": "CodeSymbol",
+      "content_hash": "5c8ed8fb898fc8cf11127ce52cbf7ce654100d157be7db31817f44b42647ee20",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-OrderServiceRequest\", \"module_id\": \"MOD-001\", \"name\": \"OrderServiceRequest\", \"public\": true, \"realizes_id\": \"DTO-001\"}"
+    },
+    {
+      "id": "SYM-MOD-003-InventoryServiceResponse",
+      "kind": "CodeSymbol",
+      "content_hash": "dbfb494d8d7585a7d1538aeec15ecb8a8591ce196f578f2822af834d4b0fd2ac",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-InventoryServiceResponse\", \"module_id\": \"MOD-003\", \"name\": \"InventoryServiceResponse\", \"public\": true, \"realizes_id\": \"DTO-004\"}"
+    },
+    {
+      "id": "SYM-MOD-001-OrderServiceResponse",
+      "kind": "CodeSymbol",
+      "content_hash": "feca4fec09a6f8236af3081ec935bd48aefc701f34f51bbaa7bac943a228c4c2",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-OrderServiceResponse\", \"module_id\": \"MOD-001\", \"name\": \"OrderServiceResponse\", \"public\": true, \"realizes_id\": \"DTO-002\"}"
+    },
+    {
+      "id": "SYM-MOD-003-process_inventory_service",
+      "kind": "CodeSymbol",
+      "content_hash": "fca3f5b1d589786fb662575102cd1a6bcdb1258da7fc7888582b63c7397be337",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-process_inventory_service\", \"module_id\": \"MOD-003\", \"name\": \"process_inventory_service\", \"public\": true, \"realizes_id\": \"MOD-003::process_inventory_service\"}"
+    },
+    {
+      "id": "SYM-MOD-001-process_order_service",
+      "kind": "CodeSymbol",
+      "content_hash": "22cd626f400a0a597b7da8cf9b6d1e7d7de28dcda2adfa3328118df757057dbb",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-process_order_service\", \"module_id\": \"MOD-001\", \"name\": \"process_order_service\", \"public\": true, \"realizes_id\": \"MOD-001::process_order_service\"}"
+    },
+    {
+      "id": "FND-001",
+      "kind": "Finding",
+      "content_hash": "44e1c56bf3fcb5c28a26eba7044180c0afc9162e731e8e7905d5c700758f13a4",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"dimension\": \"correctness\", \"file\": \"services/order_service/api_routes.py\", \"id\": \"FND-001\", \"impact\": \"Edge-case whitespace input requires explicit normalization before persistence.\", \"line\": 1, \"quote\": \"\\\"\\\"\\\"Enterprise implementation f\", \"refs\": [\"AC-001-01\", \"MOD-002\"], \"repro_artifact\": null, \"rule\": \"BOUNDARY_VALIDATION\", \"severity\": \"major\", \"source\": \"reviewer\", \"status\": \"verified\", \"symbol_name\": \"handle_order_service_endpoint\"}"
+    },
+    {
+      "id": "RSK-001",
+      "kind": "RiskPattern",
+      "content_hash": "a15bbfd2a041500aaf6e472e8497f29d164a94676bb525ddcd7625b03c96e723",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"id\": \"RSK-001\", \"module_id\": \"MOD-002\", \"rule\": \"BOUNDARY_VALIDATION\", \"summary\": \"Resolved BOUNDARY_VALIDATION in MOD-002\"}"
+    },
+    {
+      "id": "SYM-MOD-004-handle_inventory_service_endpoint",
+      "kind": "CodeSymbol",
+      "content_hash": "aca2b652518711e01a3d0fc4de926dea79d02db1c3148d3d5ebbd0e72c7c81b2",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-004\", \"id\": \"SYM-MOD-004-handle_inventory_service_endpoint\", \"module_id\": \"MOD-004\", \"name\": \"handle_inventory_service_endpoint\", \"public\": true, \"realizes_id\": \"MOD-004::handle_inventory_service_endpoint\"}"
+    },
+    {
+      "id": "SYM-MOD-002-handle_order_service_endpoint",
+      "kind": "CodeSymbol",
+      "content_hash": "62e93dabcafabcdd7b5208467e971b1fc86f39f23b6f44acb59a9b16b11521ca",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-002\", \"id\": \"SYM-MOD-002-handle_order_service_endpoint\", \"module_id\": \"MOD-002\", \"name\": \"handle_order_service_endpoint\", \"public\": true, \"realizes_id\": \"MOD-002::handle_order_service_endpoint\"}"
+    }
+  ],
+  "edges": [
+    {
+      "src": "TSK-001",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "TSK-002",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-001-01",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-001-02",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "TSK-003",
+      "dst": "ST-002",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-002-01",
+      "dst": "ST-002",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "INV-001",
+      "dst": "ST-001",
+      "rel": "GUARDS",
+      "epoch": 0
+    },
+    {
+      "src": "INV-001",
+      "dst": "ST-002",
+      "rel": "GUARDS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "NFR-001",
+      "rel": "SATISFIES",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "ADR-001",
+      "rel": "DECIDED_BY",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "NFR-001",
+      "rel": "SATISFIES",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "ADR-001",
+      "rel": "DECIDED_BY",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "SVC-002",
+      "rel": "DEPENDS_ON",
+      "epoch": 0
+    },
+    {
+      "src": "MOD-001",
+      "dst": "SVC-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "AC-001-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "AC-001-02",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001::process_order_service",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-002",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TBL-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "ERR-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "SVC-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "AC-001-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "AC-001-02",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "MOD-001",
+      "rel": "DEPENDS_ON",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002::handle_order_service_endpoint",
+      "dst": "MOD-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "SVC-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "AC-002-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003::process_inventory_service",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-003",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-004",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TBL-002",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "ERR-002",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "SVC-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "AC-002-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "MOD-003",
+      "rel": "DEPENDS_ON",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004::handle_inventory_service_endpoint",
+      "dst": "MOD-004",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TST-001",
+      "dst": "AC-001-01",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "TST-002",
+      "dst": "AC-001-02",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "TST-003",
+      "dst": "AC-002-01",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "BLD-001",
+      "dst": "MOD-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-002",
+      "dst": "MOD-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-002",
+      "dst": "BLD-001",
+      "rel": "DEPENDS_ON",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-003",
+      "dst": "MOD-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-004",
+      "dst": "MOD-004",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-004",
+      "dst": "BLD-003",
+      "rel": "DEPENDS_ON",
+      "epoch": 3
+    },
+    {
+      "src": "SYM-MOD-001-OrderServiceDomainError",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-OrderServiceDomainError",
+      "dst": "ERR-001",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-InventoryServiceDomainError",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-InventoryServiceDomainError",
+      "dst": "ERR-002",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-OrderServiceRequest",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-InventoryServiceRequest",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-OrderServiceRequest",
+      "dst": "DTO-001",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-InventoryServiceRequest",
+      "dst": "DTO-003",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-OrderServiceResponse",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-OrderServiceResponse",
+      "dst": "DTO-002",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-InventoryServiceResponse",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-InventoryServiceResponse",
+      "dst": "DTO-004",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-process_order_service",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-process_order_service",
+      "dst": "MOD-001::process_order_service",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-process_inventory_service",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-process_inventory_service",
+      "dst": "MOD-003::process_inventory_service",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-001",
+      "rel": "RAISED_ON",
+      "epoch": 4
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-003",
+      "rel": "RAISED_ON",
+      "epoch": 4
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-001",
+      "rel": "GUARDS",
+      "epoch": 4
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-003",
+      "rel": "GUARDS",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-004-handle_inventory_service_endpoint",
+      "dst": "MOD-004",
+      "rel": "OWNED_BY",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-004-handle_inventory_service_endpoint",
+      "dst": "MOD-004::handle_inventory_service_endpoint",
+      "rel": "REALIZES",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-002-handle_order_service_endpoint",
+      "dst": "MOD-002",
+      "rel": "OWNED_BY",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-002-handle_order_service_endpoint",
+      "dst": "MOD-002::handle_order_service_endpoint",
+      "rel": "REALIZES",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "AC-002-01",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-004",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "AC-001-01",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-002",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-004",
+      "rel": "GUARDS",
+      "epoch": 6
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-002",
+      "rel": "GUARDS",
+      "epoch": 6
+    }
+  ],
+  "test_runs": [
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    }
+  ]
+}

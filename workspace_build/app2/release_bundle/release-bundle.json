@@ -1,0 +1,28 @@
+{
+  "commit_sha": "trunk-epoch-8",
+  "db_migration_verified": true,
+  "graph_epoch": 8,
+  "handoff_hash": "0aad42636049cbad9e0c5bf0362824bb3fbb8913969c7d84c3848e6cdd6afdd6",
+  "iac_plan": "helm/values.yaml",
+  "images": [
+    "registry.enterprise.internal/chess-game-service@sha256:0aad42636049cbad9e0c5bf0362824bb3fbb8913969c7d84c3848e6cdd6afdd6",
+    "registry.enterprise.internal/chess-engine-service@sha256:0aad42636049cbad9e0c5bf0362824bb3fbb8913969c7d84c3848e6cdd6afdd6"
+  ],
+  "lld_hash": "7983c72cd869ce2f5b919ae7a270b2d5a7622db430136aeeb94908649443a31d",
+  "provenance": "release_bundle/provenance.intoto.jsonl",
+  "review": {
+    "change_manifest_json": "release_bundle/change-manifest.json",
+    "findings_json": "release_bundle/review-findings.json",
+    "requirements_trace_json": "release_bundle/requirements-trace.json",
+    "security_sarif": "release_bundle/security-results.sarif",
+    "summary_md": "release_bundle/review-summary.md",
+    "suppressions_yaml": "release_bundle/suppressions.yaml",
+    "test_evidence_json": "release_bundle/test-evidence.json",
+    "unresolved_md": "release_bundle/unresolved-findings.md"
+  },
+  "run_id": "run-2026-10-22-001",
+  "runbook": "release_bundle/runbook.md",
+  "sandbox_url": "https://sandbox.hnd-chess-game-001.k3s.internal",
+  "sbom": "release_bundle/sbom.spdx.json",
+  "smoke_passed": true
+}

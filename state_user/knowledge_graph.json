@@ -1,0 +1,1295 @@
+{
+  "meta": [
+    {
+      "key": "epoch",
+      "value": "8"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "ST-001",
+      "kind": "Story",
+      "content_hash": "c32747183686391e140605e391f4003c4cfe70f972f51616831cfbc4c756c05b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"criteria\": [{\"gherkin\": \"Given valid user_id credentials and email When the registration endpoint is called Then the user is persisted with salted password hash and status PROCESSED\", \"id\": \"AC-001-01\"}, {\"gherkin\": \"Given a duplicate user_id or non-positive quantity When the registration endpoint is called Then a 422 DomainError is raised\", \"id\": \"AC-001-02\"}], \"epic_id\": \"EP-001\", \"source_anchor\": \"PRD-Auth-Section-1.1\", \"story_id\": \"ST-001\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"title\": \"Secure User Registration and Sign Up\"}"
+    },
+    {
+      "id": "TSK-001",
+      "kind": "Task",
+      "content_hash": "46a54bd50a82164f761dd8e717de2ca68eec37139b4137990e3201c5520c104a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-001\", \"story_id\": \"ST-001\"}"
+    },
+    {
+      "id": "TSK-002",
+      "kind": "Task",
+      "content_hash": "23e23ffb4c7b9fbe2f2ed531f8620d898eaa8392842f0dfaa83b98c79e632bdd",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-002\", \"story_id\": \"ST-001\"}"
+    },
+    {
+      "id": "AC-001-01",
+      "kind": "AC",
+      "content_hash": "8d48d0b877feaedb5d717f770721d74247fd66d2fda00af45d37c6d3c5511f90",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given valid user_id credentials and email When the registration endpoint is called Then the user is persisted with salted password hash and status PROCESSED\", \"id\": \"AC-001-01\"}"
+    },
+    {
+      "id": "AC-001-02",
+      "kind": "AC",
+      "content_hash": "637b706f47186e4207be4547fe89e4541a62ef7d22e27bb10ddd7f0a546883f5",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given a duplicate user_id or non-positive quantity When the registration endpoint is called Then a 422 DomainError is raised\", \"id\": \"AC-001-02\"}"
+    },
+    {
+      "id": "ST-002",
+      "kind": "Story",
+      "content_hash": "e65a4de9818dd8a1761b92a7ee921fa6ec7d64d80992198395b0dbbf040b7000",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"criteria\": [{\"gherkin\": \"Given verified user_id credentials When the login endpoint is called Then a signed session token is returned with status PROCESSED\", \"id\": \"AC-002-01\"}], \"epic_id\": \"EP-001\", \"source_anchor\": \"PRD-Auth-Section-1.2\", \"story_id\": \"ST-002\", \"task_ids\": [\"TSK-003\"], \"title\": \"User Authentication and Login Verification\"}"
+    },
+    {
+      "id": "TSK-003",
+      "kind": "Task",
+      "content_hash": "f123abe9e1c3f6de62e4acb6b303d656b158398f2566964a67b21d987272adb1",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-003\", \"story_id\": \"ST-002\"}"
+    },
+    {
+      "id": "AC-002-01",
+      "kind": "AC",
+      "content_hash": "c9297e8c94caa5d1496dfc104c3a52928f0e5bf924f5cb25a6e47b3ab2c9e9e1",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given verified user_id credentials When the login endpoint is called Then a signed session token is returned with status PROCESSED\", \"id\": \"AC-002-01\"}"
+    },
+    {
+      "id": "ST-003",
+      "kind": "Story",
+      "content_hash": "535b2512e179ebb9a6b7bec671adc7038da8bccbdedf6589abe84ab425cdd212",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"criteria\": [{\"gherkin\": \"Given an authenticated session When credential update is submitted Then password hash is rotated and persisted with status PROCESSED\", \"id\": \"AC-003-01\"}], \"epic_id\": \"EP-001\", \"source_anchor\": \"PRD-Auth-Section-1.3\", \"story_id\": \"ST-003\", \"task_ids\": [\"TSK-004\"], \"title\": \"Credential Rotation and User Profile Management\"}"
+    },
+    {
+      "id": "TSK-004",
+      "kind": "Task",
+      "content_hash": "11754c0613e38ca0735458a841b5b99b607943d84cf9d180c2b18010359d42fd",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"id\": \"TSK-004\", \"story_id\": \"ST-003\"}"
+    },
+    {
+      "id": "AC-003-01",
+      "kind": "AC",
+      "content_hash": "cc681dc08d844e97689fdc772b416bf20baabed1c4a7ed4e4d9b298d40a6b24b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"gherkin\": \"Given an authenticated session When credential update is submitted Then password hash is rotated and persisted with status PROCESSED\", \"id\": \"AC-003-01\"}"
+    },
+    {
+      "id": "NFR-001",
+      "kind": "NFR",
+      "content_hash": "9a834d053d12f73118a2a0f48a129061164536ac61d087e775380a0833f58941",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"assumption\": false, \"comparator\": \"<=\", \"id\": \"NFR-001\", \"metric\": \"p95_auth_latency_ms\", \"statement\": \"Argon2id password verification and login latency must complete under 250ms\", \"threshold\": 250.0, \"unit\": \"ms\"}"
+    },
+    {
+      "id": "NFR-002",
+      "kind": "NFR",
+      "content_hash": "c385cd7332f4700f6f11e81c376cbc279021944889d81f45225f602e5063070c",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"assumption\": false, \"comparator\": \">=\", \"id\": \"NFR-002\", \"metric\": \"crypto_strength_bits\", \"statement\": \"Credential storage encryption must use AES-256-GCM with zero plaintext leaks\", \"threshold\": 256.0, \"unit\": \"bits\"}"
+    },
+    {
+      "id": "ADR-001",
+      "kind": "ADR",
+      "content_hash": "6c958618d7186dc949fe7cdb8b80ea4ebaec3f8a065771a03706bc7d3e517d40",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"decision\": \"Enforce Argon2id key derivation with per-user salt and asymmetric JWT tokens.\", \"id\": \"ADR-001\", \"level\": 1, \"status\": \"accepted\", \"title\": \"Argon2id Password Hashing and JWT Session Verification\"}"
+    },
+    {
+      "id": "TERM-user_id",
+      "kind": "DomainTerm",
+      "content_hash": "f4587d97f3ee0d09fdb58d91be344206bc021b9969eece678da8d4c047a29891",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"canonical_snake\": \"user_id\", \"classification\": \"confidential\", \"definition\": \"Globally unique subject identifier associated with an authenticated user account.\", \"term\": \"User Account Identifier\"}"
+    },
+    {
+      "id": "TERM-credential_hash",
+      "kind": "DomainTerm",
+      "content_hash": "5c7988528145a36b7958ad4091c86783e764fabad87ca0ab40d7b6b6ec9686a9",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"canonical_snake\": \"credential_hash\", \"classification\": \"restricted_pci\", \"definition\": \"Cryptographic one-way Argon2id digest of salted user password credentials.\", \"term\": \"Credential Hash\"}"
+    },
+    {
+      "id": "TERM-session_token",
+      "kind": "DomainTerm",
+      "content_hash": "f2af40ad0cfe655b6b4f3dc74e70608b67209579615319c8cf77260b43dcd616",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"canonical_snake\": \"session_token\", \"classification\": \"confidential\", \"definition\": \"Cryptographically signed JWT bearer token containing authenticated user claims.\", \"term\": \"Session Token\"}"
+    },
+    {
+      "id": "INV-001",
+      "kind": "BusinessInvariant",
+      "content_hash": "6ddadec87be6e30e009978685fe7da6d3591a38f9c318b5bbd2bce0e6e3e33c5",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"applies_to_stories\": [\"ST-001\", \"ST-002\", \"ST-003\"], \"id\": \"INV-001\", \"statement\": \"Every user registration and login session must have a non-empty user_id and valid security credential.\"}"
+    },
+    {
+      "id": "SVC-001",
+      "kind": "Component",
+      "content_hash": "96d8df7ff6b2dc4018020b81bad9351fa1de95f9f7131c51146b43659cf5ec99",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"adr_ids\": [\"ADR-001\"], \"architectural_reasoning\": \"Handles account registration and profile onboarding under NFR-001 and NFR-002.\", \"id\": \"SVC-001\", \"linked_task_ids\": [\"TSK-001\", \"TSK-002\"], \"name\": \"user-registration-service\", \"responsibilities\": [\"Handle user sign up, email validation, and profile provisioning\", \"Enforce password complexity and zero-plaintext storage invariants\"], \"satisfies_nfrs\": [\"NFR-001\", \"NFR-002\"], \"storage_type\": \"PostgreSQL\", \"technology_stack\": \"Python 3.12 / FastAPI / PostgreSQL\", \"tier\": \"Application Backend Service\"}"
+    },
+    {
+      "id": "SVC-002",
+      "kind": "Component",
+      "content_hash": "72479f74cbb5dea03528b9c1dabd223601931388e6898e73cba9fff23405e6ff",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 0,
+      "stale": 0,
+      "payload_json": "{\"adr_ids\": [\"ADR-001\"], \"architectural_reasoning\": \"Isolates cryptographic credential operations, hashing, and token signing.\", \"id\": \"SVC-002\", \"linked_task_ids\": [\"TSK-003\", \"TSK-004\"], \"name\": \"auth-credential-service\", \"responsibilities\": [\"Validate credentials with Argon2id, issue JWT tokens, and enforce rate limits\", \"Manage credential rotation, password hashing, and active session revocation\"], \"satisfies_nfrs\": [\"NFR-001\", \"NFR-002\"], \"storage_type\": \"PostgreSQL\", \"technology_stack\": \"Python 3.12 / FastAPI / PostgreSQL\", \"tier\": \"Application Backend Service\"}"
+    },
+    {
+      "id": "CON-001",
+      "kind": "Contract",
+      "content_hash": "1091086ea6a20b98d2ce1811ee67a3242d1993726a0fe6df3da516e8d719116c",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"auth_scopes\": [\"SEC-001\"], \"id\": \"CON-001\", \"kind\": \"openapi\", \"path\": \"contracts/con-001.yaml\", \"sha256\": \"35202f00d2fb879833543f747fd9f6da5301a720504cb3a3d49c6a29fda1f60c\"}"
+    },
+    {
+      "id": "MOD-001",
+      "kind": "Module",
+      "content_hash": "db39241bf3c4bf97f2034cb4d2936b3259c9e381a6abbf2feee400c316be1254",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"component_id\": \"SVC-001\", \"config_keys\": [\"CFG-001\"], \"data_models\": [{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-001\", \"module_id\": \"MOD-001\", \"name\": \"UserRegistrationServiceRequest\", \"validators\": []}, {\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-002\", \"module_id\": \"MOD-001\", \"name\": \"UserRegistrationServiceResponse\", \"validators\": []}], \"depends_on\": [], \"errors\": [{\"exception_name\": \"UserRegistrationServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-001\", \"module_id\": \"MOD-001\", \"problem_type_uri\": \"https://errors.enterprise.internal/user_registration_service/domain-error\"}], \"id\": \"MOD-001\", \"layer\": \"domain\", \"path\": \"services/user_registration_service/domain_service.py\", \"public_interface\": [{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 10, \"name\": \"process_user_registration_service\", \"output_dto\": \"DTO-002\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for user-registration-service.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_user_registration_service(payload: UserRegistrationServiceRequest) -> UserRegistrationServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"user_registration_service_processed_total\"], \"span_name\": \"user_registration_service.process\", \"structured_log_events\": [\"user_registration_service_processed\"]}, \"transaction_boundary\": \"required\"}], \"responsibilities\": [\"Core domain logic and persistence for user-registration-service\"], \"tables\": [{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-001\", \"indexes\": [[\"user_id\"]], \"module_id\": \"MOD-001\", \"owner_component_id\": \"SVC-001\", \"primary_key\": [\"record_id\"], \"table_name\": \"user_registration_service_records\"}], \"tags\": [\"core_logic\", \"persistence\"], \"task_ids\": [\"TSK-001\", \"TSK-002\"]}"
+    },
+    {
+      "id": "MOD-001::process_user_registration_service",
+      "kind": "FunctionSpec",
+      "content_hash": "9980b27dcb02e92c9cca556ccbd07c50a9c04d1cad037cc10f8196a6e5403a85",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 10, \"name\": \"process_user_registration_service\", \"output_dto\": \"DTO-002\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for user-registration-service.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_user_registration_service(payload: UserRegistrationServiceRequest) -> UserRegistrationServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"user_registration_service_processed_total\"], \"span_name\": \"user_registration_service.process\", \"structured_log_events\": [\"user_registration_service_processed\"]}, \"transaction_boundary\": \"required\"}"
+    },
+    {
+      "id": "DTO-001",
+      "kind": "DataModelSpec",
+      "content_hash": "eb61b12059fe078293cf0d9ee3d2415141a62a594fe79aa03fe94b800d4e9dae",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-001\", \"module_id\": \"MOD-001\", \"name\": \"UserRegistrationServiceRequest\", \"validators\": []}"
+    },
+    {
+      "id": "DTO-002",
+      "kind": "DataModelSpec",
+      "content_hash": "8c5fdf2b6825bac54c2d3c82bb24cbb0251c832059617f9a18f7dcaf619abf94",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-002\", \"module_id\": \"MOD-001\", \"name\": \"UserRegistrationServiceResponse\", \"validators\": []}"
+    },
+    {
+      "id": "TBL-001",
+      "kind": "TableSpec",
+      "content_hash": "f97c77c1568adade3025024553b2f323d3a3b9806bdf48dd598e342f5afa99af",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-001\", \"indexes\": [[\"user_id\"]], \"module_id\": \"MOD-001\", \"owner_component_id\": \"SVC-001\", \"primary_key\": [\"record_id\"], \"table_name\": \"user_registration_service_records\"}"
+    },
+    {
+      "id": "ERR-001",
+      "kind": "ErrorSpec",
+      "content_hash": "837697a97042890ca76bad0bf48d748fc56f7a6e1d0de87e17b93b8cfbc49bc2",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"exception_name\": \"UserRegistrationServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-001\", \"module_id\": \"MOD-001\", \"problem_type_uri\": \"https://errors.enterprise.internal/user_registration_service/domain-error\"}"
+    },
+    {
+      "id": "MOD-002",
+      "kind": "Module",
+      "content_hash": "fb2d39ab169f157e824d1ba1334417ee6f20f06ace39a91e071652e0e529bcb6",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"component_id\": \"SVC-001\", \"config_keys\": [], \"data_models\": [], \"depends_on\": [\"MOD-001\"], \"errors\": [], \"id\": \"MOD-002\", \"layer\": \"api\", \"path\": \"services/user_registration_service/api_routes.py\", \"public_interface\": [{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 8, \"name\": \"handle_user_registration_service_endpoint\", \"output_dto\": \"DTO-002\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for user-registration-service and delegate to MOD-001.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_user_registration_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.user_registration_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}], \"responsibilities\": [\"HTTP endpoint router and RFC 7807 error mapping for user-registration-service\"], \"tables\": [], \"tags\": [\"api\", \"io\"], \"task_ids\": [\"TSK-001\", \"TSK-002\"]}"
+    },
+    {
+      "id": "MOD-002::handle_user_registration_service_endpoint",
+      "kind": "FunctionSpec",
+      "content_hash": "75279d4645050dd6015d286d952274f0f17fee2e6b68daba444b305ac2aed624",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"input_dtos\": [\"DTO-001\"], \"max_cyclomatic\": 8, \"name\": \"handle_user_registration_service_endpoint\", \"output_dto\": \"DTO-002\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for user-registration-service and delegate to MOD-001.\", \"raises\": [\"ERR-001\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_user_registration_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.user_registration_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}"
+    },
+    {
+      "id": "MOD-003",
+      "kind": "Module",
+      "content_hash": "3be0b0cc09540c8189eee98a1ab01834f1536774e747005a0551be43087cdfbc",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\", \"AC-003-01\"], \"component_id\": \"SVC-002\", \"config_keys\": [\"CFG-002\"], \"data_models\": [{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-003\", \"module_id\": \"MOD-003\", \"name\": \"AuthCredentialServiceRequest\", \"validators\": []}, {\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-004\", \"module_id\": \"MOD-003\", \"name\": \"AuthCredentialServiceResponse\", \"validators\": []}], \"depends_on\": [], \"errors\": [{\"exception_name\": \"AuthCredentialServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-002\", \"module_id\": \"MOD-003\", \"problem_type_uri\": \"https://errors.enterprise.internal/auth_credential_service/domain-error\"}], \"id\": \"MOD-003\", \"layer\": \"domain\", \"path\": \"services/auth_credential_service/domain_service.py\", \"public_interface\": [{\"ac_ids\": [\"AC-002-01\", \"AC-003-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 10, \"name\": \"process_auth_credential_service\", \"output_dto\": \"DTO-004\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for auth-credential-service.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_auth_credential_service(payload: AuthCredentialServiceRequest) -> AuthCredentialServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"auth_credential_service_processed_total\"], \"span_name\": \"auth_credential_service.process\", \"structured_log_events\": [\"auth_credential_service_processed\"]}, \"transaction_boundary\": \"required\"}], \"responsibilities\": [\"Core domain logic and persistence for auth-credential-service\"], \"tables\": [{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-002\", \"indexes\": [[\"user_id\"]], \"module_id\": \"MOD-003\", \"owner_component_id\": \"SVC-002\", \"primary_key\": [\"record_id\"], \"table_name\": \"auth_credential_service_records\"}], \"tags\": [\"core_logic\", \"persistence\"], \"task_ids\": [\"TSK-003\", \"TSK-004\"]}"
+    },
+    {
+      "id": "MOD-003::process_auth_credential_service",
+      "kind": "FunctionSpec",
+      "content_hash": "6c40cefc71844a6b99a0f28da7a7d94b1249818a17c061cb4d6cc6952fe358ff",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\", \"AC-003-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 10, \"name\": \"process_auth_credential_service\", \"output_dto\": \"DTO-004\", \"postconditions\": [\"result.status == 'PROCESSED'\"], \"preconditions\": [\"payload.quantity > 0\"], \"purpose\": \"Validate business invariants and execute domain logic for auth-credential-service.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 1, \"timeout_ms\": 2000}, \"signature\": \"def process_auth_credential_service(payload: AuthCredentialServiceRequest) -> AuthCredentialServiceResponse\", \"telemetry\": {\"metrics_emitted\": [\"auth_credential_service_processed_total\"], \"span_name\": \"auth_credential_service.process\", \"structured_log_events\": [\"auth_credential_service_processed\"]}, \"transaction_boundary\": \"required\"}"
+    },
+    {
+      "id": "DTO-003",
+      "kind": "DataModelSpec",
+      "content_hash": "21b64f2354f30e080a45df68677ed789e275d6d747689db3612fb0652aa69b6f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}], \"id\": \"DTO-003\", \"module_id\": \"MOD-003\", \"name\": \"AuthCredentialServiceRequest\", \"validators\": []}"
+    },
+    {
+      "id": "DTO-004",
+      "kind": "DataModelSpec",
+      "content_hash": "14bb8639c39332033b05902e1f246998423299c1b6701679731877970454c45b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"fields\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"str\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"int\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"str\"}], \"id\": \"DTO-004\", \"module_id\": \"MOD-003\", \"name\": \"AuthCredentialServiceResponse\", \"validators\": []}"
+    },
+    {
+      "id": "TBL-002",
+      "kind": "TableSpec",
+      "content_hash": "5f2dc6cc3414c12911d8ab9901502bad78e2d6f01b45798cd3fd19a93f3f9a2c",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"columns\": [{\"classification\": \"internal\", \"constraints\": null, \"name\": \"record_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"confidential\", \"constraints\": null, \"name\": \"user_id\", \"required\": true, \"type_annotation\": \"TEXT\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"quantity\", \"required\": true, \"type_annotation\": \"INTEGER\"}, {\"classification\": \"internal\", \"constraints\": null, \"name\": \"status\", \"required\": true, \"type_annotation\": \"TEXT\"}], \"foreign_keys\": [], \"id\": \"TBL-002\", \"indexes\": [[\"user_id\"]], \"module_id\": \"MOD-003\", \"owner_component_id\": \"SVC-002\", \"primary_key\": [\"record_id\"], \"table_name\": \"auth_credential_service_records\"}"
+    },
+    {
+      "id": "ERR-002",
+      "kind": "ErrorSpec",
+      "content_hash": "8a42d8b612e69c606d9e9a2fbe604ccf1ac331bceeec80de08a2488fdd2a6475",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"exception_name\": \"AuthCredentialServiceDomainError\", \"http_status\": 422, \"id\": \"ERR-002\", \"module_id\": \"MOD-003\", \"problem_type_uri\": \"https://errors.enterprise.internal/auth_credential_service/domain-error\"}"
+    },
+    {
+      "id": "MOD-004",
+      "kind": "Module",
+      "content_hash": "e27b19c66c7fd9d02003462a6e4ce42f19b9a4624363e53d797757ddbd53e276",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\", \"AC-003-01\"], \"component_id\": \"SVC-002\", \"config_keys\": [], \"data_models\": [], \"depends_on\": [\"MOD-003\"], \"errors\": [], \"id\": \"MOD-004\", \"layer\": \"api\", \"path\": \"services/auth_credential_service/api_routes.py\", \"public_interface\": [{\"ac_ids\": [\"AC-002-01\", \"AC-003-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 8, \"name\": \"handle_auth_credential_service_endpoint\", \"output_dto\": \"DTO-004\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for auth-credential-service and delegate to MOD-003.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_auth_credential_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.auth_credential_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}], \"responsibilities\": [\"HTTP endpoint router and RFC 7807 error mapping for auth-credential-service\"], \"tables\": [], \"tags\": [\"api\", \"io\"], \"task_ids\": [\"TSK-003\", \"TSK-004\"]}"
+    },
+    {
+      "id": "MOD-004::handle_auth_credential_service_endpoint",
+      "kind": "FunctionSpec",
+      "content_hash": "b8441ccf909495cb674dd61f1d9ea2943fa2b379cfcb65ae308fb3e7324d2460",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 1,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\", \"AC-003-01\"], \"input_dtos\": [\"DTO-003\"], \"max_cyclomatic\": 8, \"name\": \"handle_auth_credential_service_endpoint\", \"output_dto\": \"DTO-004\", \"postconditions\": [], \"preconditions\": [], \"purpose\": \"Expose HTTP endpoint for auth-credential-service and delegate to MOD-003.\", \"raises\": [\"ERR-002\"], \"resilience\": {\"backoff_base_ms\": 200, \"circuit_breaker_threshold\": null, \"idempotency_required\": true, \"max_retries\": 0, \"timeout_ms\": 3000}, \"signature\": \"def handle_auth_credential_service_endpoint(payload: dict) -> dict\", \"telemetry\": {\"metrics_emitted\": [], \"span_name\": \"http.post.auth_credential_service\", \"structured_log_events\": []}, \"transaction_boundary\": \"none\"}"
+    },
+    {
+      "id": "TST-001",
+      "kind": "Test",
+      "content_hash": "7ee6d63a2ed2c5c634b3efdd829f45b5e6e4eaeec4ef246aaa7d8739e4c65c3f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\"], \"file\": \"tests/acceptance/test_st_001.py\", \"id\": \"TST-001\"}"
+    },
+    {
+      "id": "TST-002",
+      "kind": "Test",
+      "content_hash": "5aa7330ca7581c348e12c80ad7abc8a8342bdb3cac69b0ecbd452114d8601520",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-02\"], \"file\": \"tests/acceptance/test_st_001.py\", \"id\": \"TST-002\"}"
+    },
+    {
+      "id": "TST-003",
+      "kind": "Test",
+      "content_hash": "0626ace74fc6d567c84d7561fb6a85191f7d7a2448e4f930644d6cc652aa9d05",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\"], \"file\": \"tests/acceptance/test_st_002.py\", \"id\": \"TST-003\"}"
+    },
+    {
+      "id": "TST-004",
+      "kind": "Test",
+      "content_hash": "2889bfa760f924837706643171f0487b0714b828ffa9b5aafd9670642bac5756",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 2,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-003-01\"], \"file\": \"tests/acceptance/test_st_003.py\", \"id\": \"TST-004\"}"
+    },
+    {
+      "id": "BLD-001",
+      "kind": "BuildTask",
+      "content_hash": "af15b65998d4de129a3fd3a5ae19a80fc9cf3c5d0255e194211d9d8e1249b03b",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [], \"files_owned\": [\"services/user_registration_service/domain_service.py\", \"tests/unit/test_mod_001.py\"], \"id\": \"BLD-001\", \"module_id\": \"MOD-001\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-002",
+      "kind": "BuildTask",
+      "content_hash": "3f73130ad45d72455bb5540b8507297bd6436442e9d59e66b82262f1ffcb0e5f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-001-01\", \"AC-001-02\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [\"BLD-001\"], \"files_owned\": [\"services/user_registration_service/api_routes.py\", \"tests/unit/test_mod_002.py\"], \"id\": \"BLD-002\", \"module_id\": \"MOD-002\", \"task_ids\": [\"TSK-001\", \"TSK-002\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-003",
+      "kind": "BuildTask",
+      "content_hash": "295696b0463b45f77a2cda4df9d32c5654b02a8f30d25f7339cc88a08f914894",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\", \"AC-003-01\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [], \"files_owned\": [\"services/auth_credential_service/domain_service.py\", \"tests/unit/test_mod_003.py\"], \"id\": \"BLD-003\", \"module_id\": \"MOD-003\", \"task_ids\": [\"TSK-003\", \"TSK-004\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "BLD-004",
+      "kind": "BuildTask",
+      "content_hash": "0803cbef46cc2935632f5e87312937c0075b6724094887e93a73d1285e9661ff",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 3,
+      "stale": 0,
+      "payload_json": "{\"ac_ids\": [\"AC-002-01\", \"AC-003-01\"], \"contract_ids\": [\"CON-001\"], \"depends_on\": [\"BLD-003\"], \"files_owned\": [\"services/auth_credential_service/api_routes.py\", \"tests/unit/test_mod_004.py\"], \"id\": \"BLD-004\", \"module_id\": \"MOD-004\", \"task_ids\": [\"TSK-003\", \"TSK-004\"], \"token_budget\": 24000}"
+    },
+    {
+      "id": "SYM-MOD-001-UserRegistrationServiceDomainError",
+      "kind": "CodeSymbol",
+      "content_hash": "a34c29a1afc6797c448260cf130abbe5625f76e52721bdb7e11cfd415d966fb8",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-UserRegistrationServiceDomainError\", \"module_id\": \"MOD-001\", \"name\": \"UserRegistrationServiceDomainError\", \"public\": true, \"realizes_id\": \"ERR-001\"}"
+    },
+    {
+      "id": "SYM-MOD-003-AuthCredentialServiceDomainError",
+      "kind": "CodeSymbol",
+      "content_hash": "92e41a08d1b9c5131156e01ce047dafc1a1dd8f68b4e948f49d259dbf171f3e8",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-AuthCredentialServiceDomainError\", \"module_id\": \"MOD-003\", \"name\": \"AuthCredentialServiceDomainError\", \"public\": true, \"realizes_id\": \"ERR-002\"}"
+    },
+    {
+      "id": "SYM-MOD-001-UserRegistrationServiceRequest",
+      "kind": "CodeSymbol",
+      "content_hash": "ca3fc841a7fab94244bf40e8396ab03e8244a7d6112dbf95855d723f14e99d78",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-UserRegistrationServiceRequest\", \"module_id\": \"MOD-001\", \"name\": \"UserRegistrationServiceRequest\", \"public\": true, \"realizes_id\": \"DTO-001\"}"
+    },
+    {
+      "id": "SYM-MOD-003-AuthCredentialServiceRequest",
+      "kind": "CodeSymbol",
+      "content_hash": "01758cb60f45fa4f087a63af62d43b125765ac3a0a2a79070b73c28813f1c4a9",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-AuthCredentialServiceRequest\", \"module_id\": \"MOD-003\", \"name\": \"AuthCredentialServiceRequest\", \"public\": true, \"realizes_id\": \"DTO-003\"}"
+    },
+    {
+      "id": "SYM-MOD-001-UserRegistrationServiceResponse",
+      "kind": "CodeSymbol",
+      "content_hash": "91d2d7bb8d19b5b69ce8577ffd9e05efa826d7b1b77b7d9dc5068386fd47a89d",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-UserRegistrationServiceResponse\", \"module_id\": \"MOD-001\", \"name\": \"UserRegistrationServiceResponse\", \"public\": true, \"realizes_id\": \"DTO-002\"}"
+    },
+    {
+      "id": "SYM-MOD-003-AuthCredentialServiceResponse",
+      "kind": "CodeSymbol",
+      "content_hash": "0ec1e6b2d5e9dda344c924a3b395e160a1ea0c67e424581c72e6b83c4271ea6e",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-AuthCredentialServiceResponse\", \"module_id\": \"MOD-003\", \"name\": \"AuthCredentialServiceResponse\", \"public\": true, \"realizes_id\": \"DTO-004\"}"
+    },
+    {
+      "id": "SYM-MOD-001-process_user_registration_service",
+      "kind": "CodeSymbol",
+      "content_hash": "f98f19fc773cd44a4c1083afa0c34e61fe5fd187055d0b775d6c869d54617253",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-001\", \"id\": \"SYM-MOD-001-process_user_registration_service\", \"module_id\": \"MOD-001\", \"name\": \"process_user_registration_service\", \"public\": true, \"realizes_id\": \"MOD-001::process_user_registration_service\"}"
+    },
+    {
+      "id": "SYM-MOD-003-process_auth_credential_service",
+      "kind": "CodeSymbol",
+      "content_hash": "5ce750e5bcd5bf7ab70fb23ad82824b0c7fa5a41605a0c7f7a702f34264bbddf",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 4,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-003\", \"id\": \"SYM-MOD-003-process_auth_credential_service\", \"module_id\": \"MOD-003\", \"name\": \"process_auth_credential_service\", \"public\": true, \"realizes_id\": \"MOD-003::process_auth_credential_service\"}"
+    },
+    {
+      "id": "FND-001",
+      "kind": "Finding",
+      "content_hash": "88ed746cc4c182c00b6b44b1fc092ee80c834b33f3730a6888e66cb71598a25e",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"dimension\": \"correctness\", \"file\": \"services/auth_credential_service/api_routes.py\", \"id\": \"FND-001\", \"impact\": \"Edge-case whitespace input requires explicit normalization before persistence.\", \"line\": 1, \"quote\": \"\\\"\\\"\\\"Enterprise implementation f\", \"refs\": [\"AC-002-01\", \"MOD-004\"], \"repro_artifact\": null, \"rule\": \"BOUNDARY_VALIDATION\", \"severity\": \"major\", \"source\": \"reviewer\", \"status\": \"verified\", \"symbol_name\": \"handle_auth_credential_service_endpoint\"}"
+    },
+    {
+      "id": "RSK-001",
+      "kind": "RiskPattern",
+      "content_hash": "8cf5247ec5711d323ed9c2ebefbcc962c8929c725978986e1669a7fbefffb22a",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"id\": \"RSK-001\", \"module_id\": \"MOD-004\", \"rule\": \"BOUNDARY_VALIDATION\", \"summary\": \"Resolved BOUNDARY_VALIDATION in MOD-004\"}"
+    },
+    {
+      "id": "SYM-MOD-002-handle_user_registration_service_endpoint",
+      "kind": "CodeSymbol",
+      "content_hash": "8082eb3481ee3475f0e6bc0e39ecb8f533e0495043d1ed84fae63c0a2757c36f",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-002\", \"id\": \"SYM-MOD-002-handle_user_registration_service_endpoint\", \"module_id\": \"MOD-002\", \"name\": \"handle_user_registration_service_endpoint\", \"public\": true, \"realizes_id\": \"MOD-002::handle_user_registration_service_endpoint\"}"
+    },
+    {
+      "id": "SYM-MOD-004-handle_auth_credential_service_endpoint",
+      "kind": "CodeSymbol",
+      "content_hash": "51c3ba28e2caac16587cda597cb7ef88458d2ba9de8b88ff7fa298fa608a94db",
+      "run_id": "run-2026-10-22-001",
+      "epoch": 6,
+      "stale": 0,
+      "payload_json": "{\"build_id\": \"BLD-004\", \"id\": \"SYM-MOD-004-handle_auth_credential_service_endpoint\", \"module_id\": \"MOD-004\", \"name\": \"handle_auth_credential_service_endpoint\", \"public\": true, \"realizes_id\": \"MOD-004::handle_auth_credential_service_endpoint\"}"
+    }
+  ],
+  "edges": [
+    {
+      "src": "TSK-001",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "TSK-002",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-001-01",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-001-02",
+      "dst": "ST-001",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "TSK-003",
+      "dst": "ST-002",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-002-01",
+      "dst": "ST-002",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "TSK-004",
+      "dst": "ST-003",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "AC-003-01",
+      "dst": "ST-003",
+      "rel": "DERIVES_FROM",
+      "epoch": 0
+    },
+    {
+      "src": "INV-001",
+      "dst": "ST-001",
+      "rel": "GUARDS",
+      "epoch": 0
+    },
+    {
+      "src": "INV-001",
+      "dst": "ST-002",
+      "rel": "GUARDS",
+      "epoch": 0
+    },
+    {
+      "src": "INV-001",
+      "dst": "ST-003",
+      "rel": "GUARDS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "NFR-001",
+      "rel": "SATISFIES",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "NFR-002",
+      "rel": "SATISFIES",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "ADR-001",
+      "rel": "DECIDED_BY",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "TSK-004",
+      "rel": "IMPLEMENTS",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "NFR-001",
+      "rel": "SATISFIES",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "NFR-002",
+      "rel": "SATISFIES",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-002",
+      "dst": "ADR-001",
+      "rel": "DECIDED_BY",
+      "epoch": 0
+    },
+    {
+      "src": "SVC-001",
+      "dst": "SVC-002",
+      "rel": "DEPENDS_ON",
+      "epoch": 0
+    },
+    {
+      "src": "MOD-001",
+      "dst": "SVC-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "AC-001-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001",
+      "dst": "AC-001-02",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-001::process_user_registration_service",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-002",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TBL-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "ERR-001",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "SVC-001",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "TSK-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "TSK-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "AC-001-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "AC-001-02",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002",
+      "dst": "MOD-001",
+      "rel": "DEPENDS_ON",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-002::handle_user_registration_service_endpoint",
+      "dst": "MOD-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "SVC-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "TSK-004",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "AC-002-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003",
+      "dst": "AC-003-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-003::process_auth_credential_service",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-003",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "DTO-004",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TBL-002",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "ERR-002",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "SVC-002",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "TSK-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "TSK-004",
+      "rel": "IMPLEMENTS",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "AC-002-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "AC-003-01",
+      "rel": "SATISFIES",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004",
+      "dst": "MOD-003",
+      "rel": "DEPENDS_ON",
+      "epoch": 1
+    },
+    {
+      "src": "MOD-004::handle_auth_credential_service_endpoint",
+      "dst": "MOD-004",
+      "rel": "OWNED_BY",
+      "epoch": 1
+    },
+    {
+      "src": "TST-001",
+      "dst": "AC-001-01",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "TST-002",
+      "dst": "AC-001-02",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "TST-003",
+      "dst": "AC-002-01",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "TST-004",
+      "dst": "AC-003-01",
+      "rel": "VERIFIES",
+      "epoch": 2
+    },
+    {
+      "src": "BLD-001",
+      "dst": "MOD-001",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-002",
+      "dst": "MOD-002",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-002",
+      "dst": "BLD-001",
+      "rel": "DEPENDS_ON",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-003",
+      "dst": "MOD-003",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-004",
+      "dst": "MOD-004",
+      "rel": "IMPLEMENTS",
+      "epoch": 3
+    },
+    {
+      "src": "BLD-004",
+      "dst": "BLD-003",
+      "rel": "DEPENDS_ON",
+      "epoch": 3
+    },
+    {
+      "src": "SYM-MOD-001-UserRegistrationServiceDomainError",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-UserRegistrationServiceDomainError",
+      "dst": "ERR-001",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-UserRegistrationServiceRequest",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-UserRegistrationServiceRequest",
+      "dst": "DTO-001",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-UserRegistrationServiceResponse",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-UserRegistrationServiceResponse",
+      "dst": "DTO-002",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-AuthCredentialServiceDomainError",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-AuthCredentialServiceDomainError",
+      "dst": "ERR-002",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-AuthCredentialServiceRequest",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-AuthCredentialServiceRequest",
+      "dst": "DTO-003",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-process_user_registration_service",
+      "dst": "MOD-001",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-AuthCredentialServiceResponse",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-001-process_user_registration_service",
+      "dst": "MOD-001::process_user_registration_service",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-AuthCredentialServiceResponse",
+      "dst": "DTO-004",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-process_auth_credential_service",
+      "dst": "MOD-003",
+      "rel": "OWNED_BY",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-003-process_auth_credential_service",
+      "dst": "MOD-003::process_auth_credential_service",
+      "rel": "REALIZES",
+      "epoch": 4
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-001",
+      "rel": "RAISED_ON",
+      "epoch": 4
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-003",
+      "rel": "RAISED_ON",
+      "epoch": 4
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-001",
+      "rel": "GUARDS",
+      "epoch": 4
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-003",
+      "rel": "GUARDS",
+      "epoch": 4
+    },
+    {
+      "src": "SYM-MOD-002-handle_user_registration_service_endpoint",
+      "dst": "MOD-002",
+      "rel": "OWNED_BY",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-002-handle_user_registration_service_endpoint",
+      "dst": "MOD-002::handle_user_registration_service_endpoint",
+      "rel": "REALIZES",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "AC-001-01",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-002",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-002",
+      "rel": "GUARDS",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-004-handle_auth_credential_service_endpoint",
+      "dst": "MOD-004",
+      "rel": "OWNED_BY",
+      "epoch": 6
+    },
+    {
+      "src": "SYM-MOD-004-handle_auth_credential_service_endpoint",
+      "dst": "MOD-004::handle_auth_credential_service_endpoint",
+      "rel": "REALIZES",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "AC-002-01",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "FND-001",
+      "dst": "MOD-004",
+      "rel": "RAISED_ON",
+      "epoch": 6
+    },
+    {
+      "src": "RSK-001",
+      "dst": "MOD-004",
+      "rel": "GUARDS",
+      "epoch": 6
+    }
+  ],
+  "test_runs": [
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-004",
+      "commit_sha": "commit-bld-001-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-004",
+      "commit_sha": "commit-bld-003-r1",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-004",
+      "commit_sha": "commit-bld-001-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-004",
+      "commit_sha": "commit-bld-003-r1-fix-retry",
+      "passed": 1,
+      "epoch": 4
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-004",
+      "commit_sha": "commit-bld-002-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-004",
+      "commit_sha": "commit-bld-004-r1",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-004",
+      "commit_sha": "commit-bld-002-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-001",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-002",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-003",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    },
+    {
+      "test_id": "TST-004",
+      "commit_sha": "commit-bld-004-r1-fix-retry",
+      "passed": 1,
+      "epoch": 6
+    }
+  ]
+}

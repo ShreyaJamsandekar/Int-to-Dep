@@ -1,0 +1,23 @@
+verification:
+  coverage_line_min: 0.85
+  coverage_branch_min: 0.75
+  mutation_score_min: 0.70
+  performance_regression_tolerance_pct: 10
+review_loop:
+  max_rounds: 6
+  rung_step: 1
+  min_score: 4
+  proof_required: [correctness, security]
+release:
+  G2:
+    mode: human
+    auto_when:
+      all_verification_layers: pass
+      open_blocker_or_major_findings: 0
+      unverified_fixes: 0
+      conformance_matrix_complete: true
+      scanner_high_critical: 0
+      suppressions_without_validator_agreement: 0
+run:
+  max_minutes: 150
+  max_task_attempts: 12

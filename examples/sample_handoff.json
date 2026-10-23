@@ -1,0 +1,164 @@
+{
+  "handoff_version": "1.0.0",
+  "handoff_id": "HND-ORDER-INVENTORY-001",
+  "source_run_id": "phase1-run-099",
+  "prd_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "selected_architecture": "Modular Monolith (Layered)",
+  "architecture_selection_reasoning": "Selected Modular Monolith to satisfy latency NFR-001 and transactional order consistency for ST-001 and ST-002.",
+  "target_platform": "kubernetes_k3s",
+  "domain_glossary": [
+    {
+      "term": "Order SKU",
+      "canonical_snake": "order_sku",
+      "definition": "Unique stock keeping identifier for a customer line item.",
+      "classification": "confidential"
+    }
+  ],
+  "business_invariants": [
+    {
+      "id": "INV-001",
+      "statement": "Every order line item must have a strictly positive quantity and non-empty order_sku.",
+      "applies_to_stories": [
+        "ST-001",
+        "ST-002"
+      ]
+    }
+  ],
+  "stories": [
+    {
+      "story_id": "ST-001",
+      "epic_id": "EP-001",
+      "title": "Create Validated Customer Order",
+      "task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ],
+      "criteria": [
+        {
+          "id": "AC-001-01",
+          "gherkin": "Given a valid order_sku and positive quantity When the order endpoint is called Then the order is persisted with status PROCESSED"
+        },
+        {
+          "id": "AC-001-02",
+          "gherkin": "Given a zero or negative quantity When the order endpoint is called Then a 422 DomainError is raised"
+        }
+      ],
+      "source_anchor": "PRD-Section-3.1"
+    },
+    {
+      "story_id": "ST-002",
+      "epic_id": "EP-001",
+      "title": "Reserve Inventory Stock",
+      "task_ids": [
+        "TSK-003"
+      ],
+      "criteria": [
+        {
+          "id": "AC-002-01",
+          "gherkin": "Given an approved order_sku When inventory reservation runs Then stock is reserved with status PROCESSED"
+        }
+      ],
+      "source_anchor": "PRD-Section-3.2"
+    }
+  ],
+  "nfrs": [
+    {
+      "id": "NFR-001",
+      "statement": "P95 order processing latency must be under 150ms",
+      "metric": "p95_latency_ms",
+      "comparator": "<=",
+      "threshold": 150.0,
+      "unit": "ms",
+      "assumption": false
+    }
+  ],
+  "components": [
+    {
+      "id": "SVC-001",
+      "name": "order-service",
+      "tier": "Application Backend Service",
+      "responsibilities": [
+        "Validate and persist customer orders"
+      ],
+      "technology_stack": "Python 3.12 / FastAPI / PostgreSQL",
+      "storage_type": "PostgreSQL",
+      "linked_task_ids": [
+        "TSK-001",
+        "TSK-002"
+      ],
+      "satisfies_nfrs": [
+        "NFR-001"
+      ],
+      "adr_ids": [
+        "ADR-001"
+      ],
+      "architectural_reasoning": "Handles synchronous order creation and validation under NFR-001."
+    },
+    {
+      "id": "SVC-002",
+      "name": "inventory-service",
+      "tier": "Application Backend Service",
+      "responsibilities": [
+        "Reserve and track inventory stock for orders"
+      ],
+      "technology_stack": "Python 3.12 / FastAPI / PostgreSQL",
+      "storage_type": "PostgreSQL",
+      "linked_task_ids": [
+        "TSK-003"
+      ],
+      "satisfies_nfrs": [
+        "NFR-001"
+      ],
+      "adr_ids": [
+        "ADR-001"
+      ],
+      "architectural_reasoning": "Isolates stock ledger mutations while sharing modular monolith deployment."
+    }
+  ],
+  "dependencies": [
+    {
+      "source": "SVC-001",
+      "target_component": "SVC-002",
+      "kind": "runtime"
+    }
+  ],
+  "relationships": [
+    {
+      "source": "SVC-001",
+      "target": "SVC-002",
+      "interaction": "calls",
+      "protocol": "http",
+      "sync": true,
+      "contract_ref": "CON-001"
+    }
+  ],
+  "traceability": [
+    {
+      "from_id": "SVC-001",
+      "to_id": "TSK-001",
+      "relation": "implements"
+    },
+    {
+      "from_id": "SVC-001",
+      "to_id": "TSK-002",
+      "relation": "implements"
+    },
+    {
+      "from_id": "SVC-002",
+      "to_id": "TSK-003",
+      "relation": "implements"
+    }
+  ],
+  "adrs": [
+    {
+      "id": "ADR-001",
+      "level": 1,
+      "title": "Hexagonal Modular Monolith with Strict Layer Contracts",
+      "decision": "Enforce domain <- api dependency direction per service component.",
+      "status": "accepted"
+    }
+  ],
+  "shared_infrastructure": [
+    "postgresql-main"
+  ]
+}
